@@ -65,7 +65,7 @@ const SearchBar = () => {
                         root: classes.inputRoot,
                         input: classes.inputInput,
                      }}
-                     inputProps={{ 'Montserrat': 'search' }}
+                     inputProps={{ 'montserrat': 'search' }}
                   />
                </div>
             </Toolbar>

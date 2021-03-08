@@ -4,17 +4,17 @@ import Logo from './Logo';
 import './Navbar.scss'
 import SearchBar from './SearchBar';
 import SocialMedia from './SocialMedia';
-import logo from '../img/logo.svg'
+
 const Navbar = () => {
    return (
 
       <div className="navbar">
          <div className="navbar__side">
-            <p className="navbar__side__contact"  >Sipariş Hattı: 0544 655 23 32</p>
+            <h1 className="navbar__side__contact"  >Sipariş Hattı: 0544 655 23 32</h1>
             <SearchBar />
          </div>
 
-         <Logo src={logo} />
+         <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
 
          <div className="navbar__side">
             <SocialMedia href="https://instagram.com/markabaklava" text="@markabaklava" />

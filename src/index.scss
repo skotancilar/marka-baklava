@@ -1,13 +1,13 @@
-
+@import './components/abstracts/variables';
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap');
 
 body {
   margin: 0;
-  
   font-family: -apple-system, BlinkMacSystemFont,'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, 'Lora' , serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:$primary-text-color
 }
 
 code {

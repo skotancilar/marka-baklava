@@ -1,0 +1,50 @@
+@import './abstracts/variables';
+
+.card {
+   position: relative;
+   width: 90%;
+   height:auto;
+   background-color: rgba(138, 138, 138, 0.055);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   
+   
+
+   &__media{
+      background-color: $ternary-color;
+      text-align: center;
+      border: 0px solid $primary-color;
+      box-shadow:5px 11px 25px -5px rgba(12, 12, 12, 0.349); 
+      transition: all .2s ease-out;
+      
+
+      &:hover{
+      border: 10px solid $primary-color;
+      }
+   }
+   
+
+   &__media > img {
+      position: relative;
+      width: 100% ;
+      height: auto;
+      
+   }
+
+   &__title{
+      margin-top:1rem;
+      font-size: 2rem;
+      text-transform: uppercase;
+   }
+
+   &__content{
+      margin-top: 0.6rem;
+      font-size: 1.9rem;
+      font-weight: 700;
+   }
+   &__content > span{
+      font-size: 1.5rem;
+      margin-left: 5px;
+   }
+}

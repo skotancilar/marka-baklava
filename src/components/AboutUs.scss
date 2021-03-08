@@ -1,0 +1,31 @@
+@import './abstracts/mixins.scss';
+.about{
+   padding: 3rem 5rem;
+
+   &__img > img{
+      width: 100%;
+      height: auto;
+   }
+   
+   &__img > button{
+      font-size: 4rem;
+      position: absolute;
+      z-index: 100;
+      @include absCenter;
+   }
+
+   &__us{
+   font-family: 'Lora';
+   text-align: center;
+   }
+   
+   &__us > h1{
+      font-size: 5rem;
+   }
+
+   &__us > p {
+      font-size: 1.7rem;
+      line-height: 3.2rem;
+      text-indent: 1rem;
+   }
+}
