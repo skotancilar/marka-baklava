@@ -1,0 +1,13 @@
+@import "./abstracts/variables";
+
+.navbar__socialMedia{
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   color: $color-white;
+   font-family: 'DINPro-Regular';
+
+   &__brand{
+      font-size: large;
+   }
+}

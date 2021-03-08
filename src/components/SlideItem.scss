@@ -1,0 +1,14 @@
+@import "./abstracts/mixins";
+
+.header__item > img{
+   margin: 0;
+   max-width: 100%;
+   max-height: 75vh;
+   vertical-align: middle;
+   cursor: pointer;
+
+}
+.header__item {
+ text-align: center;
+ background: linear-gradient(90deg, rgba(76,36,28,1) 0%, rgba(117, 55, 42, 0.966) 50%, rgba(76,36,28,1) 100%);
+}
