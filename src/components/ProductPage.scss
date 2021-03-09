@@ -1,0 +1,75 @@
+@import "./abstracts/variables";
+section{
+   padding: 12rem 2rem 5rem;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: #2C3D2E;;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: red!important;
+}
+.product{
+   min-height: 100vh;
+
+   &__info{
+      // display: flex;
+      // flex-direction: column;
+      // justify-content:space-between;
+
+      &__header{
+         display:flex;
+         justify-content: space-between;
+         align-items: center;
+         height: auto;
+         padding: 2rem;
+         font-size: 3rem;
+
+         :last-child{
+            align-self: flex-end;
+         }
+
+      }
+      
+      &__header > h1{
+         font-weight: 400;
+      }
+
+      &__description{
+         display: flex;
+         align-items: center;
+         padding: 2rem;
+         height: auto;
+         margin-top:3rem;
+         background-color: $ternary-color;
+         color: white;
+         font-size: 2rem;
+         
+
+      &__description > h3{
+         font-weight: 400;
+      }
+
+      }
+
+      &__form{
+         margin-top: 10rem;
+         display: flex;
+         justify-content: space-between;
+         font-size: large;
+      }
+
+
+   }
+
+  
+
+   &__img > img {
+      position: relative;
+      display: block;
+      margin: auto auto;
+      width: 85% ;
+      height: auto;
+      box-shadow:5px 11px 25px -5px rgba(12, 12, 12, 0.349); 
+   }
+
+}

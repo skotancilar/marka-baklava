@@ -1,5 +1,47 @@
 @import './abstracts/variables';
 .footer{
-   height: 250px;
+   height: auto;
+   padding: 2rem;
    background-color: $secondary-color;
+   color: $text-color-white;
+   font-weight: 400;
+
+   &__contact > ul{
+      list-style: none;
+   }
+
+   &__contact > h2{
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      
+   }
+   
+   &__contact ul > li{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      
+   }
+
+   &__contact ul > li > h3{
+      margin-left: 1rem;
+      font-weight: 400;
+   }
+
+   &__logo{
+      width: 100%;
+      height: auto;
+   }
+
+   &__misc > img{
+      height: 5rem;
+      margin: 0.5rem 1rem
+   }
+
+   &__rights > p{
+      text-align: center;
+   }
 }

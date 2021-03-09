@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import CartIcon from './CartIcon';
 import Logo from './Logo';
 import './Navbar.scss'
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 import SocialMedia from './SocialMedia';
+import './Logo.scss';
+
 
 const Navbar = () => {
    return (
@@ -12,13 +14,16 @@ const Navbar = () => {
       <div className="navbar">
          <div className="navbar__side">
             <h1 className="navbar__side__contact"  >
-               <div>Sipariş Hattı:</div>
-               <div>0544 655 23 32</div>
+               <div>Sipariş Hattı:&nbsp;</div>
+               <div><a href="tel://905517462326">0551 746 23 26</a></div>
             </h1>
-            <SearchBar />
+            {/* <SearchBar /> */}
          </div>
          <Link to='/'>
-            <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
+            <div className="navbar__logo">
+               <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
+            </div>
+
          </Link>
 
          <div className="navbar__side">

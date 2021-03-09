@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import Home from './Home';
 import ItemList from './ItemList';
+import ProductPage from './ProductPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/baklavalar" exact component={ItemList} />
+            <Route path="/baklavalar/:id" exact component={ProductPage} />
           </Switch>
           <Footer />
         </div>
@@ -22,10 +24,5 @@ function App() {
     </div>
   );
 }
-{/* adress ve telefon
-          marka baklava t]mhaklari saklidir
-          shopier
-          logo
-           */}
 
 export default App;

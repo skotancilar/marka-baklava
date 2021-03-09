@@ -4,7 +4,7 @@ import './AboutUs.scss'
 
 const AboutUs = () => {
    return (
-      <div className="about">
+      <section className="about">
          <div className="container">
             <div className="row">
                <div className="col-lg-6 about__img">
@@ -21,8 +21,7 @@ const AboutUs = () => {
                </div>
             </div>
          </div>
-
-      </div>
+      </section>
    )
 }
 

@@ -66,6 +66,10 @@
             display: none;
          }
       }
+      &__contact > div > a{
+         text-decoration: none;
+         color: inherit ;
+      }
    }
 
    &__logo{
