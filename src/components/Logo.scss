@@ -1,7 +1,29 @@
+@import "./abstracts/mixins";
+
 .navbar__logo > img {
    position: relative;
-   top: 52px;
-   height: 180px;
+   top: 42px;
+   height: 160px;
    width: auto;
    text-shadow: 0 0 20px #fff;
+
+   @include respond (xl-size){
+         top: 52px;
+         height: 180px
+      }
+
+   @include respond (lg-size){
+         top: 42px;
+         height: 150px;
+      }
+
+   @include respond (md-size){
+         top: 35px;
+         height: 125px;
+      }
+      
+   @include respond (sm-size){
+      top: 25px;
+      height: 95px;
+   }
 }

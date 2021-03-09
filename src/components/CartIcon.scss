@@ -1,12 +1,40 @@
-.navbar__cart__size{
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+.navbar__cart > svg{
+   position: relative;
+   font-size: 3rem;
+   @include respond (sm-size){
+      font-size: 2.5rem;
+   }
+}
+.navbar__cart{
+   margin-right: 1rem;
+   position: relative;
+   min-width: 5rem;
+   
+   &__size{
    margin: auto auto;
    position: absolute;
-   background-color: white;
+   transform: translateX(-10px);
+   top: -4px;
+   background-color: $accent-color-warning;
    width: 18px;
    height: 18px;
    border-radius: 50%;
-   color: #4C241C;
+   color: $color-white;
    font-weight: 700;
    text-align: center;
    font-size: small;
+
+   @include respond (md-size){
+      font-size: xx-small;
+      width: 10px;
+      height: 10px;
+      color:transparent;
+      transform: translateX(-6px);
+      top: -4px;
+   }
+}
+
 }

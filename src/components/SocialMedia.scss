@@ -1,13 +1,32 @@
 @import "./abstracts/variables";
+@import "./abstracts/mixins";
 
 .navbar__socialMedia{
    display: flex;
    align-items: center;
    text-decoration: none;
-   color: $color-white;
+   color: inherit;
    font-family: 'DINPro-Regular';
+   margin:0 2rem 0 2rem;
+
+   @include respond (sm-size){
+      margin:0  1rem 0 0;
+   }
+
 
    &__brand{
       font-size: large;
+
+      @include respond (lg-size){
+        font-size: medium;
+      }
+
+      @include respond (md-size){
+         display: none;
+      }
    }
+}
+
+.navbar__socialMedia > svg {
+   font-size: 5rem;
 }

@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
    icon: {
-      fontSize: 40
    }
 }));
 

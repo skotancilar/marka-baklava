@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CartIcon from './CartIcon';
 import Logo from './Logo';
 import './Navbar.scss'
@@ -10,19 +11,22 @@ const Navbar = () => {
 
       <div className="navbar">
          <div className="navbar__side">
-            <h1 className="navbar__side__contact"  >Sipariş Hattı: 0544 655 23 32</h1>
+            <h1 className="navbar__side__contact"  >
+               <div>Sipariş Hattı:</div>
+               <div>0544 655 23 32</div>
+            </h1>
             <SearchBar />
          </div>
-
-         <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
+         <Link to='/'>
+            <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
+         </Link>
 
          <div className="navbar__side">
             <SocialMedia href="https://instagram.com/markabaklava" text="@markabaklava" />
             <CartIcon />
          </div>
       </div>
-
-   )
+   );
 
 }
 
