@@ -18,6 +18,7 @@ function App() {
             <Route path="/baklavalar" exact component={ItemList} />
             <Route path="/baklavalar/:id" exact component={ProductPage} />
           </Switch>
+          
           <Footer />
         </div>
       </Router>

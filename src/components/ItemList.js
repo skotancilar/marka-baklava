@@ -25,7 +25,7 @@ const ItemList = (props) => {
    const renderList = baklavalar.map(baklava => {
       return (
          <div className="item col-xl-3 col-lg-4 col-6">
-            <Link to={`/baklavalar/${baklava.id}`}>
+            <Link to={`/baklavalar/${baklava.id}`} exact>
                < Item src={process.env.PUBLIC_URL + baklava.pic} title={baklava.title} price={baklava.price} id={baklava.id} key={baklava.id} />
             </Link>
          </div>

@@ -14,8 +14,8 @@ const Navbar = () => {
       <div className="navbar">
          <div className="navbar__side">
             <h1 className="navbar__side__contact"  >
-               <div>Sipariş Hattı:&nbsp;</div>
-               <div><a href="tel://905517462326">0551 746 23 26</a></div>
+               <span>Sipariş Hattı:&nbsp;</span>
+               <span><a href="tel://905517462326">0551 746 23 26</a></span>
             </h1>
             {/* <SearchBar /> */}
          </div>

@@ -1,13 +1,15 @@
 @import "./abstracts/variables";
+@import "./abstracts/mixins";
+
 section{
    padding: 12rem 2rem 5rem;
 }
-.MuiFormLabel-root.Mui-focused {
-  color: #2C3D2E;;
-}
-.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: red!important;
-}
+// .MuiFormLabel-root.Mui-focused {
+//   color: #2C3D2E;;
+// }
+// .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+//   border-color: red!important;
+// }
 .product{
    min-height: 100vh;
 
@@ -23,6 +25,10 @@ section{
          height: auto;
          padding: 2rem;
          font-size: 3rem;
+
+         @include respond(md-size){
+            font-size: 1.5rem;
+         }
 
          :last-child{
             align-self: flex-end;
@@ -61,15 +67,20 @@ section{
 
    }
 
+   &__img {
+      object-fit: contain;
+   }
+
   
 
    &__img > img {
       position: relative;
       display: block;
       margin: auto auto;
-      width: 85% ;
+      width: 80% ;
       height: auto;
       box-shadow:5px 11px 25px -5px rgba(12, 12, 12, 0.349); 
+      
    }
 
 }

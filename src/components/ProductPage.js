@@ -1,6 +1,6 @@
+import React from 'react';
 import { Button, FormControl, FormHelperText, makeStyles, withStyles, MenuItem, Select, TextField } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
-import React from 'react';
 import "./ProductPage.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -74,9 +74,9 @@ const ProductPage = () => {
                               <MenuItem value="">
                                  <em>Miktar Seciniz</em>
                               </MenuItem>
-                              <MenuItem value={0.5}>0,5 Kg. Paket - 60 TL</MenuItem>
                               <MenuItem value={1}>1 Kg. Paket - 120 TL</MenuItem>
-                              <MenuItem value={2}>2 Kg. TEPSI - 250 TL</MenuItem>
+                              <MenuItem value={2}>2 Kg. Tepsi - 240 TL</MenuItem>
+                              <MenuItem value={3}>3 Kg. TEPSI - 360 TL</MenuItem>
                            </Select>
                            <FormHelperText></FormHelperText>
                         </FormControl>
