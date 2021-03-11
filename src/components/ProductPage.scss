@@ -39,8 +39,11 @@ section{
       &__header > h1{
          font-weight: 400;
       }
+      &__description {
+         
+      }
 
-      &__description{
+      &__description > h3{
          display: flex;
          align-items: center;
          padding: 2rem;
@@ -49,12 +52,8 @@ section{
          background-color: $ternary-color;
          color: white;
          font-size: 2rem;
-         
-
-      &__description > h3{
          font-weight: 400;
-      }
-
+         
       }
 
       &__form{

@@ -29,29 +29,25 @@
 }
 
 .footer__logo > img{
-   margin: auto auto;
+   // margin: auto auto;
+   // display: block;
    position: relative;
-   display: block;
    height: 160px;
-   width: auto;
+   width: 90%;
    text-shadow: 0 0 20px #fff;
     @include respond (xl-size){
-         
          height: 180px
       }
 
    @include respond (lg-size){
-         
          height: 150px;
       }
 
    @include respond (md-size){
-        
          height: 125px;
       }
       
    @include respond (sm-size){
-     
       height: 95px;
    }
 }

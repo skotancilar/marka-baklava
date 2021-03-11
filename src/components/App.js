@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import ItemList from './ItemList';
 import ProductPage from './ProductPage';
+import WhatsApp from './WhatsApp';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Route path="/baklavalar" exact component={ItemList} />
             <Route path="/baklavalar/:id" exact component={ProductPage} />
           </Switch>
-          
+          <WhatsApp src={process.env.PUBLIC_URL + '/img/whatsapp.png'} alt="WhatsApp logo" />
           <Footer />
         </div>
       </Router>

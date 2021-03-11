@@ -6,7 +6,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
    icon: {
-      marginRight: theme.spacing(1)
+      // marginRight: theme.spacing(1),
+      display: 'block',
+      margin: '0 auto',
+      fontSize: '5rem'
+
    }
 }));
 

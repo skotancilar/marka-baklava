@@ -1,22 +1,27 @@
 @import './abstracts/variables';
 
 .card {
+   margin: 2rem auto;
+   display: block;
    position: relative;
-   width: 90%;
-   height:auto;
-   background-color: rgba(138, 138, 138, 0.055);
+   width: 100%;
+   height:25rem;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+ 
    
    
 
    &__media{
+      width: 100%;
+      height: 100%;
       background-color: $ternary-color-light;
       text-align: center;
       border: 0px solid $primary-color;
       box-shadow:5px 11px 25px -5px rgba(12, 12, 12, 0.349); 
       transition: all .2s ease-out;
+      // flex: 1 0 100%;
       
 
       &:hover{
@@ -26,22 +31,29 @@
    
 
    &__media > img {
+      display: block;
+      margin: auto auto;
       position: relative;
       width: 100% ;
-      height: auto;
+      height: 20rem;
+      object-fit: cover;
       
    }
 
    &__title{
       margin-top:1rem;
+      padding: 0.5rem 0;
       font-size: 2rem;
       text-transform: uppercase;
+      background-color: rgba(138, 138, 138, 0.055);
    }
 
    &__content{
       margin-top: 0.6rem;
+      padding: 0.5rem 0;
       font-size: 1.9rem;
       font-weight: 700;
+      background-color: rgba(138, 138, 138, 0.055);
    }
    &__content > span{
       font-size: 1.5rem;

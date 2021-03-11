@@ -11,7 +11,7 @@ const Card = ({ src, alt, title, price }) => {
 
          <div className="card__title">{title}</div>
 
-         <div className="card__content">{price}<span>₺</span></div>
+         <div className="card__content">{price}<span>₺/<sub>kg</sub></span></div>
       </div>
    )
 }

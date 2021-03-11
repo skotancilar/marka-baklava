@@ -34,7 +34,7 @@
       display: flex;  
       align-items: center;
       justify-content: space-around;
-      flex : 1 0 40%;
+      flex : 1 0 34vw;
       height: 7rem;
 
       @include respond (sm-size){
@@ -49,7 +49,7 @@
          align-items: center;
          font-family: 'DINPro-Regular';
          font-weight: 700;
-         font-size: 1.5rem;
+         font-size: 2rem;
 
       &__contact > span{
          display: inline;
@@ -66,11 +66,11 @@
       
          @include respond (md-size){
             // display: none;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
          }
          @include respond (sm-size){
             // display: none;
-            font-size: 1rem;
+            font-size: 1.5rem;
          }
       }
       &__contact > span > a{
@@ -80,7 +80,7 @@
    }
 
    &__logo{
-      width: 20%;
+     flex: 1 0 20vw;
    }
 } 
 

@@ -16,9 +16,10 @@ const Header = () => {
    return (
       <div className="header">
          <Slider {...settings}>
-            <SlideItem alt="slide-1" src={'/img/slayt2.jpg'} />
-            <SlideItem alt="slide-2" src={'/img/slayt-3.jpg'} />
-            <SlideItem alt="slide-3" src={'/img/slayt-4.jpg'} />
+            <SlideItem alt="slide-1" src={'/img/slayt-1.jpg'} />
+            <SlideItem alt="slide-2" src={'/img/slayt-2.jpg'} />
+            <SlideItem alt="slide-4" src={'/img/slayt-4.jpg'} />
+            <SlideItem alt="slide-5" src={'/img/slayt-5.jpg'} />
          </Slider>
       </div >
    );

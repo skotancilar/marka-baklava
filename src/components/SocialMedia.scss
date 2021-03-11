@@ -15,13 +15,17 @@
 
 
    &__brand{
-      font-size: large;
+      font-size: xx-large;
 
       @include respond (lg-size){
-        font-size: medium;
+        font-size: large;
       }
 
       @include respond (md-size){
+        font-size: medium;
+      }
+
+      @include respond (sm-size){
          display: none;
       }
    }
@@ -29,4 +33,8 @@
 
 .navbar__socialMedia > svg {
    font-size: 5rem;
+}
+
+.footer__socialmedia{
+   
 }

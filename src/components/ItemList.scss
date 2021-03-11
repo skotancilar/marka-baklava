@@ -1,7 +1,7 @@
 @import "./abstracts/variables";
 @import "./abstracts/mixins";
 .products{
-   padding: 5rem 0;
+   padding: 5rem 0 8rem 0;
    // background: linear-gradient(180deg, rgba(72,98,62,0.12648809523809523) 0%, rgba(72,98,62,0.5466561624649859) 100%);
    background:  rgba(72, 98, 62, 0.068);
 
@@ -11,6 +11,18 @@
       
    @include respond (sm-size){
          padding: 3rem 1rem;
+   }
+
+   & h1 {
+      display: block;
+      width: 100%;
+      background-color: $ternary-color;
+      color: $color-white;
+      font-size: 5rem;
+      padding: 2rem;
+      margin:1rem auto;
+      text-align: center;
+      font-weight: 400;
    }
 
 }

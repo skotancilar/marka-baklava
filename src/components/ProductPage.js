@@ -1,7 +1,8 @@
-import React from 'react';
-import { Button, FormControl, FormHelperText, makeStyles, withStyles, MenuItem, Select, TextField } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Button, makeStyles, withStyles, FormControl, FormHelperText, MenuItem, Select, TextField } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 import "./ProductPage.scss";
+import { baklavalar } from '../apis/data'
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -35,13 +36,31 @@ const ColorButton = withStyles((theme) => ({
    },
 }))(Button);
 
-const ProductPage = () => {
+
+
+const ProductPage = ({ match }) => {
    const classes = useStyles();
-   const [miktar, setMiktar] = React.useState('');
+   const [miktar, setMiktar] = useState('');
+   const [baklavaId, setBaklavaId] = useState({});
 
    const handleChange = (event) => {
       setMiktar(event.target.value);
    };
+
+   useEffect(() => {
+      setBaklavaId(Number(match.params.id));
+   }, [match.params.id]);
+
+
+   const baklava = baklavalar.find(baklava => baklava.id === baklavaId);
+
+
+   console.log(baklavalar);
+   console.log(baklavaId);
+   console.log(baklava);
+   console.log(match.params.id);
+
+   const { title, price, pic } = baklava
 
    return (
       <section className="product">
@@ -49,18 +68,18 @@ const ProductPage = () => {
             <div className="row py-2">
                <div className="col-md-6 pr-2">
                   <div className="product__img">
-                     <img src={process.env.PUBLIC_URL + '/img/1-fistikli-baklava.jpg'} alt="asdas" />
+                     <img src={process.env.PUBLIC_URL + pic} alt="asdas" />
                   </div>
 
                </div>
                <div className="col-md-6 pl-2">
                   <div className="product__info">
                      <div className="product__info__header">
-                        <h1>Fistikli Baklava</h1>
-                        <h2>120 ₺</h2>
+                        <h1>{title}</h1>
+                        <h2>{price._1kg}</h2>
                      </div>
                      <div className="product__info__description">
-                        <h3>Fistikli Baklava</h3>
+                        <h3>{title}</h3>
                      </div>
                      <form className="product__info__form" noValidate autoComplete="off" >
                         <FormControl className={classes.formControl}>
@@ -74,9 +93,9 @@ const ProductPage = () => {
                               <MenuItem value="">
                                  <em>Miktar Seciniz</em>
                               </MenuItem>
-                              <MenuItem value={1}>1 Kg. Paket - 120 TL</MenuItem>
-                              <MenuItem value={2}>2 Kg. Tepsi - 240 TL</MenuItem>
-                              <MenuItem value={3}>3 Kg. TEPSI - 360 TL</MenuItem>
+                              <MenuItem value={price._1kg}>{`1 Kg. Paket - ${price._1kg} TL`}</MenuItem>
+                              <MenuItem value={price._2kg}>{`2 Kg. TEPSI + TEPSI BEDELI - ${price._2kg} TL`}</MenuItem>
+                              <MenuItem value={price._3kg}>{`3 Kg. TEPSI + TEPSI BEDELI - ${price._3kg} TL`}</MenuItem>
                            </Select>
                            <FormHelperText></FormHelperText>
                         </FormControl>
@@ -101,7 +120,7 @@ const ProductPage = () => {
                         </div>
 
                         <ColorButton variant="contained" color="primary" className={classes.format}>
-                           Sepete Ekle
+                           Hemen Al
                         </ColorButton>
                      </form>
                   </div>

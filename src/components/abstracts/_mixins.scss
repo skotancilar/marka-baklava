@@ -32,6 +32,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
+
 @mixin respond($breakpoint) {
     @if $breakpoint == sm-size {
         @media only screen and (max-width: 36em) { @content };    //576px
