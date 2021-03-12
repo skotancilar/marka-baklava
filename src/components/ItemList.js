@@ -21,20 +21,15 @@ const ItemList = (props) => {
    //    }
    // }, []);
 
-
-
-   const renderList = baklavalar.map(baklava => {
+   const renderList = baklavalar.map((baklava, index) => {
       return (
          <div className="item col-xl-3 col-lg-4 col-6">
             <Link to={`/baklavalar/${baklava.id}`}>
-               < Item src={process.env.PUBLIC_URL + baklava.pic} title={baklava.title} price={baklava.price._1kg} id={baklava.id} key={baklava.id} />
+               < Item src={process.env.PUBLIC_URL + baklava.imgUrl} title={baklava.title} price={baklava.price[0]} id={baklava.id} key={index.toString()} />
             </Link>
          </div>
       );
    });
-
-   console.log(renderList);
-
 
    return (
       <section className="products">

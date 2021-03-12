@@ -10,13 +10,19 @@ section{
 // .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
 //   border-color: red!important;
 // }
+
 .product{
-   min-height: 100vh;
+   min-height: 90vh;
 
    &__info{
-      // display: flex;
-      // flex-direction: column;
-      // justify-content:space-between;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-between;
+
+   @include respond (md-size){
+      margin-top: 4rem;
+   }
+      
 
       &__header{
          display:flex;
@@ -26,9 +32,9 @@ section{
          padding: 2rem;
          font-size: 3rem;
 
-         @include respond(md-size){
-            font-size: 1.5rem;
-         }
+         // @include respond(md-size){
+         //    font-size: 1.5rem;
+         // }
 
          :last-child{
             align-self: flex-end;
@@ -38,6 +44,7 @@ section{
       
       &__header > h1{
          font-weight: 400;
+         margin-right: 4rem;
       }
       &__description {
          
@@ -61,6 +68,8 @@ section{
          display: flex;
          justify-content: space-between;
          font-size: large;
+         flex-wrap: wrap;
+
       }
 
 
@@ -79,7 +88,36 @@ section{
       width: 80% ;
       height: auto;
       box-shadow:5px 11px 25px -5px rgba(12, 12, 12, 0.349); 
-      
    }
 
+   &__other{
+
+      margin-top: 3rem;
+
+      & h2{
+      display: block;
+      width: 100%;
+      background-color: $ternary-color;
+      color: $color-white;
+      font-size: 4rem;
+      padding: 2rem;
+      margin:1rem auto;
+      text-align: center;
+      font-weight: 400;
+
+
+   }
+
+   
+
+      @include respond (md-size){
+         font-size: 4rem;
+      }
+   }
+
+   // &__slide{
+   //    height: ;
+   // }
+
 }
+

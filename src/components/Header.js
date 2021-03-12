@@ -7,7 +7,7 @@ const Header = () => {
    const settings = {
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 8000,
       centerPadding: 10,
       initialSlide: 1,
       shift: 10,

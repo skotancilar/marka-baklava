@@ -1,118 +1,85 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-export default axios.create({
-   baseURL: 'http://localhost:3001'
-})
+// export default axios.create({
+//    baseURL: 'http://localhost:3001'
+// })
 
 export const baklavalar = [
    {
       id: 1,
       title: "Fıstıklı Baklava",
-      price: {
-         _1kg: 120,
-         _2kg: 195,
-         _3kg: 290
-      },
-      pic: "/img/1-fistikli-baklava.jpg"
+      price: [120, 195, 290],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/1-fistikli-baklava.jpg"
    },
    {
       id: 2,
       title: "Kuru Baklava",
-      price: {
-         _1kg: 110,
-         _2kg: 235,
-         _3kg: 350
-      },
-      pic: "/img/2-kuru-baklava.jpg"
+      price: [110, 235, 350],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/2-kuru-baklava.jpg"
    },
    {
       id: 3,
-      title: "Fıstıklı Baklava",
-      price: {
-         _1kg: 110,
-         _2kg: 235,
-         _3kg: 350
-      },
-      pic: "/img/3-ozel-kare-baklava.jpg"
+      title: "Özel Kare Baklava",
+      price: [110, 235, 350],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/3-ozel-kare-baklava.jpg"
    },
    {
       id: 4,
       title: "Midye Baklava",
-      price: {
-         _1kg: 140,
-         _2kg: 320,
-         _3kg: 510
-      },
-      pic: "/img/4-midye.jpg"
+      price: [140, 320, 510],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/4-midye.jpg"
    },
    {
       i: 5,
       title: "Şöbiyet",
-      price: {
-         _1kg: 140,
-         _2kg: 295,
-         _3kg: 440
-      },
-      pic: "/img/5-sobiyet.jpg"
+      price: [140, 295, 440],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/5-sobiyet.jpg"
    },
    {
       id: 6,
       title: "Havuç dilimi",
-      price: {
-         _1kg: 120,
-         _2kg: 255,
-         _3kg: 380
-      },
-      pic: "/img/6-havuc-dilimi.jpg"
+      price: [120, 255, 380],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/6-havuc-dilimi.jpg"
    },
    {
       id: 7,
       title: "Dolama",
-      price: {
-         _1kg: 150,
-         _2kg: 315,
-         _3kg: 470
-      },
-      pic: "/img/7-dolama.jpg"
+      price: [150, 315, 470],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/7-dolama.jpg"
    },
    {
       id: 8,
       title: "Dürüm",
-      price: {
-         _1kg: 130,
-         _2kg: 275,
-         _3kg: 410
-      },
-      pic: "/img/8-durum-baklava.jpg"
+      price: [130, 275, 410],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/8-durum-baklava.jpg"
    },
    {
       id: 9,
       title: "Fıstıklı Burma Kadayıf",
-      price: {
-         _1kg: 90,
-         _2kg: 230,
-         _3kg: null
-      },
-      pic: "/img/9-fistikli-burma-kadayif.jpg"
+      price: [90, 230],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ'],
+      imgUrl: "/img/9-fistikli-burma-kadayif.jpg"
    },
    {
       id: 10,
       title: "Fıstıklı Düz Kadayıf",
-      price: {
-         _1kg: 70,
-         _2kg: 155,
-         _3kg: 230
-      },
-      pic: "/img/10-fistikli-duz-kadayif.jpg"
+      price: [70, 115, 230],
+      amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],
+      imgUrl: "/img/10-fistikli-duz-kadayif.jpg"
    },
    {
       id: 11,
       title: "Tuzlu Antep Fıstığı",
-      price: {
-         _1kg: 45,
-         _2kg: 90,
-         _3kg: null
-      },
-      pic: "/img/11-antep-fistigi.jpg"
+      price: [45, 90],
+      amount: ['500 gr.', '1 Kg.'],
+      imgUrl: "/img/11-antep-fistigi.jpg"
    }
 ]
