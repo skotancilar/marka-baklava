@@ -34,7 +34,7 @@ export const baklavalar = [
       imgUrl: "/img/4-midye.jpg"
    },
    {
-      i: 5,
+      id: 5,
       title: "Şöbiyet",
       price: [140, 295, 440],
       amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],

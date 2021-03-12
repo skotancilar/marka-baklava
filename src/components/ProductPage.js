@@ -70,8 +70,8 @@ const ProductPage = ({ match }) => {
 
    const settings = {
       adaptiveHeight: true,
-      centerMode: true,
       autoplay: true,
+      className: 'slide_products',
       autoplaySpeed: 5000,
       initialSlide: 1,
       dots: true,
@@ -96,6 +96,8 @@ const ProductPage = ({ match }) => {
       imgUrl = baklava.imgUrl;
       amount = baklava.amount;
    }
+
+   let randomId = ((baklava.id + 7) % 11) + 1
    const renderMenuItem = baklava.price.map((value, i) => <MenuItem value={price[i]}>{`${amount[i]} - ${price[i]} TL`}</MenuItem>)
 
    const renderList = baklavalar.map((baklava, index) => {
@@ -184,6 +186,10 @@ const ProductPage = ({ match }) => {
             <div className="product__other__slide mt-5">
                <Slider {...settings}>
                   {renderList}
+                  <Link to={`/baklavalar/${baklavalar[randomId].id}`}>
+                     < Item src={process.env.PUBLIC_URL + baklavalar[randomId].imgUrl} title={baklavalar[randomId].title} price={baklavalar[randomId].price[0]} id={baklavalar[randomId].id} />
+                  </Link>
+
                </Slider>
             </div>
 
