@@ -25,10 +25,6 @@
       height: 65px;
       }
       
-   @include respond (sm-size){
-        height: 50px;
-   }
-
 
    &__side{
       display: flex;  
@@ -38,6 +34,7 @@
       height: 7rem;
 
       @include respond (sm-size){
+         flex : 1 0 29vw;         
          justify-content: center;
       }
 

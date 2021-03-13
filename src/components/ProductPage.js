@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { Link } from 'react-router-dom'
-import { Button, makeStyles, withStyles, FormControl, FormHelperText, MenuItem, Select } from '@material-ui/core';
-import { red } from '@material-ui/core/colors';
+import { makeStyles, FormControl, FormHelperText, MenuItem, Select } from '@material-ui/core';
+// import { red } from '@material-ui/core/colors';
 import "./ProductPage.scss";
 import { baklavalar } from '../apis/data';
 import Item from './Item';
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
    root: {
       '& .MuiTextField-root': {
          margin: theme.spacing(1),
-         width: '25ch',
+         width: '30ch',
       },
    },
    format: {
@@ -22,31 +22,34 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: 0
    },
    formControl: {
-      margin: theme.spacing(1),
+      margin: theme.spacing(1, 0, 3),
       minWidth: 120,
-      fontSize: '2rem'
+      fontSize: '2rem',
+      fontFamily: 'inherit',
    },
    selectEmpty: {
       marginTop: theme.spacing(2),
       fontSize: '2rem',
+      fontFamily: 'inherit'
    }
 }));
 
 
-const ColorButton = withStyles((theme) => ({
-   root: {
-      color: theme.palette.getContrastText(red[500]),
-      backgroundColor: red[500],
-      '&:hover': {
-         backgroundColor: red[700],
-      },
-   },
-}))(Button);
+// const ColorButton = withStyles((theme) => ({
+//    root: {
+//       color: theme.palette.getContrastText(red[500]),
+//       backgroundColor: red[500],
+//       '&:hover': {
+//          backgroundColor: red[700],
+//       },
+//    },
+// }))(Button);
 
 
 
 const ProductPage = ({ match }) => {
    const id = Number(match.params.id);
+   console.log(match.params.id);
 
    const classes = useStyles();
 
@@ -97,7 +100,8 @@ const ProductPage = ({ match }) => {
       amount = baklava.amount;
    }
 
-   let randomId = ((baklava.id + 7) % 11) + 1
+   let randomId = Math.floor(Math.random() * 9) % + 1
+
    const renderMenuItem = baklava.price.map((value, i) => <MenuItem value={price[i]}>{`${amount[i]} - ${price[i]} TL`}</MenuItem>)
 
    const renderList = baklavalar.map((baklava, index) => {
@@ -171,9 +175,10 @@ const ProductPage = ({ match }) => {
                               />
                            </div> */}
                         </div>
-                        <ColorButton variant="contained" color="primary" className={classes.format}>
+                        <button style={{ backgroundColor: '#FE4F34', color: 'white', borderRadius: '0', fontSize: '2rem', fontFamily: 'Montserrat', minheight: '5rem', padding: '2rem 2rem' }} className="shopier" id={match.params.id}>Hemen Al</button>
+                        {/* <ColorButton variant="contained" id={id} className='shopier'>
                            Hemen Al
-                        </ColorButton>
+                        </ColorButton> */}
                      </form>
                   </div>
                </div>
@@ -186,10 +191,11 @@ const ProductPage = ({ match }) => {
             <div className="product__other__slide mt-5">
                <Slider {...settings}>
                   {renderList}
-                  <Link to={`/baklavalar/${baklavalar[randomId].id}`}>
-                     < Item src={process.env.PUBLIC_URL + baklavalar[randomId].imgUrl} title={baklavalar[randomId].title} price={baklavalar[randomId].price[0]} id={baklavalar[randomId].id} />
-                  </Link>
-
+                  <div className="item">
+                     <Link to={`/baklavalar/${baklavalar[randomId].id}`}>
+                        < Item src={process.env.PUBLIC_URL + baklavalar[randomId].imgUrl} title={baklavalar[randomId].title} price={baklavalar[randomId].price[0]} id={baklavalar[randomId].id} />
+                     </Link>
+                  </div>
                </Slider>
             </div>
 

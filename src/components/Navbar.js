@@ -16,6 +16,11 @@ const Navbar = () => {
                <span>Sipariş Hattı:&nbsp;</span>
                <span><a href="tel://905517462326">0551 746 23 26</a></span>
             </h1>
+            <div className="d-none d-md-block">
+               <Link to='/hakkimizda'>
+                  <h1 className="navbar__side__contact" >Hakkımızda</h1>
+               </Link>
+            </div>
             {/* <SearchBar /> */}
          </div>
 

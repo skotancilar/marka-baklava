@@ -22,10 +22,6 @@
          height: 125px;
       }
       
-   @include respond (sm-size){
-      top: 25px;
-      height: 95px;
-   }
 }
 
 .footer__logo > img{

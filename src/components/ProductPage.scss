@@ -69,6 +69,7 @@ section{
          justify-content: space-between;
          font-size: large;
          flex-wrap: wrap;
+         align-items: center;
 
       }
 
@@ -105,7 +106,6 @@ section{
       text-align: center;
       font-weight: 400;
 
-
    }
 
    
@@ -118,8 +118,15 @@ section{
    padding:0 2.5rem;
  } 
 
- .item{
+ .item {
     padding:0 0.5rem;
+
+    & p{
+       font-size: inherit;
+       @include respond (sm-size){
+          font-size: 1.5rem ;
+       }
+    }
  }
    // .carousel-arrow block carousel-prev {
    //    color: aliceblue;

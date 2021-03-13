@@ -6,7 +6,7 @@
 
 export const baklavalar = [
    {
-      id: 1,
+      id: 6522038,
       title: "Fıstıklı Baklava",
       price: [120, 195, 290],
       amount: ['1 Kg. Paket', '2 Kg. TEPSI + TEPSİ BEDELİ', '3 Kg. TEPSİ + TEPSİ BEDELİ'],

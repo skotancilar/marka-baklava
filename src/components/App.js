@@ -8,6 +8,7 @@ import ItemList from './ItemList';
 import ProductPage from './ProductPage';
 import WhatsApp from './WhatsApp';
 import ScrollToTop from './ScroollToTop';
+import AboutUs from './AboutUs';
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
         <div>
           <Navbar />
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/baklavalar" exact component={ItemList} /><ScrollToTop>
+            <ScrollToTop>
+              <Route path="/" exact component={Home} />
+              <Route path="/baklavalar" exact component={ItemList} />
               <Route path="/baklavalar/:id" exact component={ProductPage} />
+              <Route path="/hakkimizda" exact component={AboutUs} />
             </ScrollToTop>
           </Switch>
           <WhatsApp src={process.env.PUBLIC_URL + '/img/whatsapp.png'} alt="WhatsApp logo" />

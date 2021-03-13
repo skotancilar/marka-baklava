@@ -7,11 +7,9 @@ const Header = () => {
    const settings = {
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 8000,
-      centerPadding: 10,
+      autoplaySpeed: 6000,
       initialSlide: 1,
       shift: 10,
-      virtualList: true
    };
    return (
       <div className="header">

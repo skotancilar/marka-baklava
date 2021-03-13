@@ -9,9 +9,9 @@ const Card = ({ src, alt, title, price }) => {
             <img src={src} alt={alt} />
          </div>
 
-         <div className="card__title">{title}</div>
+         <div className="card__title"><p>{title}</p></div>
 
-         <div className="card__content">{price}<span>₺/<sub>kg</sub></span></div>
+         <div className="card__content"><p>{price}<span>₺/<sub>kg</sub></span></p></div>
       </div>
    )
 }
