@@ -75,6 +75,7 @@ const Navbar = () => {
             <div className="navbar__side">
                <SocialMedia href="https://instagram.com/markabaklava" text="@markabaklava" />
                <MenuIcon id='sidebar-trigger' style={{ fontSize: '4rem', margin: '2rem' }} fontSize='large' />
+               <img className='d-none d-md-block' src={process.env.PUBLIC_URL + '/img/logo.svg'} alt='logo' style={{ width: '5rem', height: 'auto', marginRight: '2rem' }} />
                {/* <CartIcon /> */}
             </div>
          </div>
