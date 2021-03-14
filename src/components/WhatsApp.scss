@@ -4,9 +4,10 @@
    width: auto;
    bottom: 0rem;
    z-index: 1000;
+
 }
 
-.whatsapp img {
+.whatsapp img{
    margin: 3rem 3rem;
    height: 6rem;
    width: auto;
@@ -15,6 +16,7 @@
    transform: translate3d(0, 0, 0);
    backface-visibility: hidden;
    perspective: 1000px;
+   
 }
 
 @keyframes shake {

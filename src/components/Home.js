@@ -14,7 +14,7 @@ const Home = () => {
          <ItemList />
          <div className="container">
             <div className="product__info__description">
-               <h3 className="mt-5">Musterilerimizin Dikkatine</h3>
+               <h3 className="mt-5">Değerli Müşterilerimizin Dikkatine!</h3>
                <ul className="mt-5">
                   <li><b>İNTERNET SİTEMİZ ÜZERİNDEN YAPILAN ALIŞVERİŞLERDE KARGO ÜCRETİ MÜŞTERİMİZE AİTTİR. ORTALAMA TESLİMAT SÜRESİ 1-3 GÜNDÜR.</b></li>
                   <li><b>300 TL ÜZERİ</b> ALIŞVERİŞLERDE KARGO ÜCRETİNİ BİZ KARŞILAMAKTAYIZ.</li>
