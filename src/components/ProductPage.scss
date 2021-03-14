@@ -4,12 +4,6 @@
 section{
    padding: 12rem 2rem 5rem;
 }
-// .MuiFormLabel-root.Mui-focused {
-//   color: #2C3D2E;;
-// }
-// .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-//   border-color: red!important;
-// }
 
 .product{
    min-height: 90vh;
@@ -21,66 +15,58 @@ section{
 
    @include respond (md-size){
       margin-top: 4rem;
-   }
-      
+   }     
 
       &__header{
          display:flex;
          justify-content: space-between;
          align-items: center;
          height: auto;
-         padding: 2rem;
-         font-size: 3rem;
+         padding: 1rem;
+         font-size: 2rem;
 
-         // @include respond(md-size){
-         //    font-size: 1.5rem;
-         // }
+         & > h1{
+         font-weight: 400;
+         margin-right: 4rem;
+      }
 
          :last-child{
             align-self: flex-end;
          }
-
       }
       
-      &__header > h1{
-         font-weight: 400;
-         margin-right: 4rem;
-      }
-      &__description {
-         
-      }
 
-      &__description > h3{
+      &__description {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+
+         & > h3{
          display: flex;
          align-items: center;
-         padding: 2rem;
+         padding: 1.5rem;
          height: auto;
-         margin-top:3rem;
+         margin:1rem 0;
          background-color: $ternary-color;
          color: white;
          font-size: 2rem;
          font-weight: 400;
-         
       }
+   }
 
       &__form{
-         margin-top: 10rem;
+         margin-top: 4rem;
          display: flex;
          justify-content: space-between;
          font-size: large;
          flex-wrap: wrap;
          align-items: center;
-
       }
-
-
    }
 
    &__img {
       object-fit: contain;
    }
-
-  
 
    &__img > img {
       position: relative;
@@ -105,10 +91,7 @@ section{
       margin:1rem auto;
       text-align: center;
       font-weight: 400;
-
    }
-
-   
 
       @include respond (md-size){
          font-size: 4rem;
@@ -126,14 +109,21 @@ section{
        @include respond (sm-size){
           font-size: 1.5rem ;
        }
-    }
+   }
  }
-   // .carousel-arrow block carousel-prev {
-   //    color: aliceblue;
-   // }
-   // &__slide{
-   //    height: ;
-   // }
+}
 
+.product__info__description ul{
+   margin-top: 3rem 0 0 1rem;
+   list-style: circle;
+   flex-direction: column;
+   & li {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      line-height: 130%;
+      & span{
+         color: red
+      }
+   }
 }
 

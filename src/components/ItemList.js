@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const ItemList = (props) => {
    // const [baklavalar, setBaklavalar] = useState([]);
 
-
    // const getData = async () => {
    //    const response = await data.get('/baklavalar');
 

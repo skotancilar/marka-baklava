@@ -24,7 +24,7 @@ function App() {
               <Route path="/hakkimizda" exact component={AboutUs} />
             </ScrollToTop>
           </Switch>
-          <WhatsApp src={process.env.PUBLIC_URL + '/img/whatsapp.png'} alt="WhatsApp logo" />
+          <WhatsApp src={process.env.PUBLIC_URL + '/img/whatsapp.svg'} alt="WhatsApp logo" />
           <Footer />
         </div>
       </Router>
