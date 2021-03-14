@@ -70,3 +70,13 @@
          display: block;
       }
    }
+
+   .footer::before{
+     content: "WhatsApp Sipariş Hattı";
+     position: relative;
+     color: black;
+     top:-10rem;
+     left: 8rem;
+     font-weight: 700;
+     font-size: 2rem;
+   }
