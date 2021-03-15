@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import './Navbar.scss'
-// import CartIcon from './CartIcon';
 // import SearchBar from './SearchBar';
 import SocialMedia from './SocialMedia';
 import './Logo.scss';
@@ -10,27 +9,6 @@ import WhatsApp from './WhatsApp';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const Navbar = () => {
-
-   // const hamburger = document.getElementById('sidebar-trigger');
-
-   // let x = true;
-
-   // const toggleSideBar = () => {
-   //    window.getElementById('sidebar-trigger').addEventListener(onclick, (e) => {
-   //       if (x) {
-   //          return false;
-   //       } else {
-   //          return true
-   //       }
-   //    })
-   // }
-
-
-   // window.getElementById('sidebar-trigger').addEventListener(onclick, toggleSideBar);
-
-
-
-
    return (
       <React.Fragment>
          <div className="navbar">
@@ -74,23 +52,11 @@ const Navbar = () => {
 
             <div className="navbar__side">
                <SocialMedia href="https://instagram.com/markabaklava" text="@markabaklava" />
+               <img className='d-none d-md-block' src={process.env.PUBLIC_URL + '/img/logo.svg'} alt='logo' style={{ width: '6rem', height: 'auto', marginRight: '2rem' }} />
                <MenuIcon id='sidebar-trigger' style={{ fontSize: '4rem', margin: '2rem' }} fontSize='large' />
-               <img className='d-none d-md-block' src={process.env.PUBLIC_URL + '/img/logo.svg'} alt='logo' style={{ width: '5rem', height: 'auto', marginRight: '2rem' }} />
                {/* <CartIcon /> */}
             </div>
          </div>
-         {/* <div className="container">
-            <div className="row">
-               <div className={`offset-6 col-6 text-right`} id='side-bar'>
-                  <ul className=''>
-                     <li>Urunler</li>
-                     <li>Hakkimiz</li>
-                     <li>Iletisim</li>
-                     <li>Hesaplarimiz</li>
-                  </ul>
-               </div>
-            </div>
-         </div > */}
       </React.Fragment >
    );
 }

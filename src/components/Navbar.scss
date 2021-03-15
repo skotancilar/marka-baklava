@@ -39,15 +39,16 @@
       }
 
       &__contact{
-         margin: 0 2rem;
+         margin: 0 1rem;
          display: flex;
          justify-content: center;
          align-items: center;
-         font-family: 'DINPro-Regular';
+         font-family: 'Montserrat';
          font-weight: 700;
-         font-size: 2rem;
+         font-size: 1.8rem;
 
          & > div {
+            font-family: 'Montserrat';
             display: flex;
             justify-content: center;
             flex-direction: column;
