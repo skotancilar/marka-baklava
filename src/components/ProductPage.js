@@ -68,11 +68,11 @@ function ProductPage({ match }) {
    }
 
    const [miktar, setMiktar] = useState(price[0]);
-   const [value, setValue] = useState();
 
-   const refresh = () => {
-      setValue({});
-   }
+   useEffect(() => {
+      setMiktar(price[0]);
+
+   }, [price])
 
    const handleChange = (event) => {
       setMiktar(event.target.value);
@@ -97,7 +97,7 @@ function ProductPage({ match }) {
    const renderList = baklavalar.map((baklava, index) => {
       return (
          <div className="item">
-            <Link onClick={refresh} to={`/baklavalar/${baklava.id}`}>
+            <Link to={`/baklavalar/${baklava.id}`}>
                <Item src={process.env.PUBLIC_URL + baklava.imgUrl} title={baklava.title} price={baklava.price[0]} id={baklava.id} key={index.toString()} />
             </Link>
          </div>
