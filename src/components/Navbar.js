@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import './Navbar.scss'
@@ -7,8 +7,21 @@ import SocialMedia from './SocialMedia';
 import './Logo.scss';
 import WhatsApp from './WhatsApp';
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
+import classNames from 'classnames';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 const Navbar = () => {
+
+   const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
+   const [mobileSidebarSlideEffect, setMobileSidebarSlideEffect] = useState(true)
+
+   function toggleMenu() {
+      setMobileMenuOpen(!mobileMenuOpen);
+      setMobileSidebarSlideEffect(!mobileSidebarSlideEffect);
+   }
+
+
    return (
       <React.Fragment>
          <div className="navbar">
@@ -39,7 +52,6 @@ const Navbar = () => {
                         </Link>
                      </li>
                   </ul>
-
                </div>
                {/* <SearchBar /> */}
             </div>
@@ -53,10 +65,38 @@ const Navbar = () => {
             <div className="navbar__side">
                <SocialMedia href="https://instagram.com/markabaklava" text="@markabaklava" />
                <img className='d-none d-md-block' src={process.env.PUBLIC_URL + '/img/logo.svg'} alt='logo' style={{ width: '6rem', height: 'auto', marginRight: '2rem' }} />
-               <MenuIcon id='sidebar-trigger' style={{ fontSize: '4rem', margin: '2rem' }} fontSize='large' />
+               {!mobileMenuOpen ? <CloseIcon onClick={toggleMenu} style={{ fontSize: '4rem', margin: '2rem' }} fontSize='large' /> : <MenuIcon onClick={toggleMenu} style={{ fontSize: '4rem', margin: '2rem' }} fontSize='large' />}
                {/* <CartIcon /> */}
             </div>
          </div>
+         <OutsideClickHandler
+            onOutsideClick={() => {
+               setMobileMenuOpen(true)
+            }}>
+            <div className={classNames({
+               'd-none': false,
+            })}>
+               <div className={`mobile-sidebar ${classNames({ 'mobile-sidebar__slide': !mobileMenuOpen })} offset-md-7 col-md-5 offset-4 col-8`}>
+                  <ul>
+                     <li>
+                        <Link to='/'>
+                           <h1>Anasayfa</h1>
+                        </Link>
+                     </li>
+                     <li>
+                        <Link to='/hakkimizda'>
+                           <h1>Hakkımızda</h1>
+                        </Link>
+                     </li>
+                     <li>
+                        <Link to='/hakkimizda'>
+                           <h1>İletişim</h1>
+                        </Link>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </OutsideClickHandler>
       </React.Fragment >
    );
 }
