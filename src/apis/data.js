@@ -78,8 +78,8 @@ export const baklavalar = [
    {
       id: 11,
       title: "Tuzlu Antep Fıstığı",
-      price: [45, 90],
-      amount: ['500 gr.', '1 Kg.'],
+      price: [90, 45],
+      amount: ['1 Kg.', '500 gr.'],
       imgUrl: "/img/11-antep-fistigi.jpg"
    }
 ]

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import { Link } from 'react-router-dom';
-import { makeStyles, FormControl, MenuItem, Select } from '@material-ui/core';
-// import { red } from '@material-ui/core/colors';
+import { makeStyles, FormControl, MenuItem, Select } from '@material-ui/core'
 import "./ProductPage.scss";
 import { baklavalar } from '../apis/data';
 import Item from './Item';
@@ -50,18 +49,6 @@ const styles = {
 }
 
 
-// const ColorButton = withStyles((theme) => ({
-//    root: {
-//       color: theme.palette.getContrastText(red[500]),
-//       backgroundColor: red[500],
-//       '&:hover': {
-//          backgroundColor: red[700],
-//       },
-//    },
-// }))(Button);
-
-
-
 function ProductPage({ match }) {
    const classes = useStyles();
    const id = Number(match.params.id);
@@ -69,7 +56,7 @@ function ProductPage({ match }) {
    const baklava = baklavalar?.find(baklava => baklava.id === id);
 
    let title = '';
-   let price = null;
+   let price = 0;
    let imgUrl = '';
    let amount = '';
 
@@ -81,18 +68,17 @@ function ProductPage({ match }) {
    }
 
    const [miktar, setMiktar] = useState(price[0]);
+   const [value, setValue] = useState();
+
+   const refresh = () => {
+      setValue({});
+   }
 
    const handleChange = (event) => {
       setMiktar(event.target.value);
    };
-   console.log(miktar);
-   // const reportWindowSize = () => {
-   //    console.log(window.innerWidth);
-   //    return (window.innerWidth < 578) ? 1 : 3;
-   // }
-   // window.addEventListener('resize', reportWindowSize);
-   const settings = {
 
+   const settings = {
       adaptiveHeight: true,
       autoplay: true,
       className: 'slide_products',
@@ -111,7 +97,7 @@ function ProductPage({ match }) {
    const renderList = baklavalar.map((baklava, index) => {
       return (
          <div className="item">
-            <Link to={`/baklavalar/${baklava.id}`}>
+            <Link onClick={refresh} to={`/baklavalar/${baklava.id}`}>
                <Item src={process.env.PUBLIC_URL + baklava.imgUrl} title={baklava.title} price={baklava.price[0]} id={baklava.id} key={index.toString()} />
             </Link>
          </div>
@@ -160,7 +146,9 @@ function ProductPage({ match }) {
                               </Select>
                            </FormControl>
                         </div>
-                        <button style={styles.button} className="shopier" id={match.params.id}>Hemen Al</button>
+                        <Link to={`/odeme/${id}`}>
+                           <button style={styles.button} className="shopier" id={match.params.id}>Hemen Al</button>
+                        </Link>
                      </form>
                   </div>
                </div>
