@@ -47,8 +47,8 @@ const Navbar = () => {
                         </Link>
                      </li>
                      <li>
-                        <Link to='/hakkimizda'>
-                           <h1 className="navbar__side__contact" >İletişim</h1>
+                        <Link to='/baklavalar'>
+                           <h1 className="navbar__side__contact" >Ürünlerimiz</h1>
                         </Link>
                      </li>
                   </ul>
@@ -89,8 +89,8 @@ const Navbar = () => {
                         </Link>
                      </li>
                      <li>
-                        <Link to='/hakkimizda'>
-                           <h1>İletişim</h1>
+                        <Link to='/baklavalar'>
+                           <h1>Ürünlerimiz</h1>
                         </Link>
                      </li>
                   </ul>
