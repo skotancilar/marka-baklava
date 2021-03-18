@@ -8,8 +8,7 @@ const Header = () => {
       arrows: false,
       autoplay: true,
       autoplaySpeed: 6000,
-      initialSlide: 1,
-      shift: 10,
+      initialSlide: 0,
    };
    return (
       <div className="header">

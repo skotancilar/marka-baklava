@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom'
 import Gallery from './Gallery';
 import Header from './Header';
 import ItemList from './ItemList';
@@ -8,9 +7,7 @@ import './ProductPage.scss'
 const Home = () => {
    return (
       <Fragment>
-         <Link to='/baklavalar'>
-            <Header />
-         </Link>
+         <Header />
          <ItemList />
          <div className="container">
             <div className="product__info__description">
@@ -25,7 +22,7 @@ const Home = () => {
          </div>
          <Gallery />
       </Fragment>
-   )
+   );
 }
 
 export default Home;

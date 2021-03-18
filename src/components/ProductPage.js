@@ -107,7 +107,7 @@ function ProductPage({ match }) {
    return (
       <section className="product">
          <div className="container-fluid">
-            <div className="row pt-2 pb-5">
+            <div className="row pb-5">
                <div className="col-md-6 pr-2">
                   <div className="product__img">
                      <img src={process.env.PUBLIC_URL + imgUrl} alt="product" />
