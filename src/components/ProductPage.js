@@ -3,9 +3,9 @@ import './App.scss';
 import { Link } from 'react-router-dom';
 import { makeStyles, FormControl, MenuItem, Select } from '@material-ui/core'
 import "./ProductPage.scss";
-import { baklavalar } from '../apis/data';
+import firebase from '../firebase';
 import Item from './Item';
-import Slider from 'infinite-react-carousel';
+// import Slider from 'infinite-react-carousel';
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -48,61 +48,65 @@ const styles = {
    }
 }
 
-
 function ProductPage({ match }) {
    const classes = useStyles();
+   const [baklavalar, setBaklavalar] = useState([]);
+   const [miktar, setMiktar] = useState('');
+
    const id = Number(match.params.id);
 
-   const baklava = baklavalar?.find(baklava => baklava.id === id);
+   const baklava = baklavalar?.find(baklava => baklava.id === id) || {};
 
-   let title = '';
-   let price = 0;
-   let imgUrl = '';
-   let amount = '';
+   let title = baklava.title || '';
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   let price = baklava.price || [];
+   let imgUrl = baklava.imgUrl || '';
+   let amount = baklava.amount || '';
 
-   if (baklava) {
-      title = baklava.title;
-      price = baklava.price;
-      imgUrl = baklava.imgUrl;
-      amount = baklava.amount;
-   }
-
-   const [miktar, setMiktar] = useState(price[0]);
+   useEffect(() => {
+      const baklavalarRef = firebase.database().ref('baklavalar');
+      const listener = baklavalarRef.on("value", (snapshot) => {
+         setBaklavalar(snapshot.val());
+      });
+      return () => baklavalarRef.off('value', listener);
+   }, []);
 
    useEffect(() => {
       setMiktar(price[0]);
 
-   }, [price])
+   }, [price]);
 
    const handleChange = (event) => {
       setMiktar(event.target.value);
    };
 
-   const settings = {
-      adaptiveHeight: true,
-      autoplay: true,
-      className: 'slide_products',
-      autoplaySpeed: 5000,
-      initialSlide: 1,
-      dots: true,
-      duration: 400,
-      gutter: 30,
-      slidesPerRow: 3,
-   };
+   // const settings = {
+   //    adaptiveHeight: true,
+   //    autoplay: true,
+   //    autoplaySpeed: 5000,
+   //    initialSlide: 1,
+   //    dots: true,
+   //    duration: 400,
+   //    gutter: 30,
+   //    slidesPerRow: 3,
+   // };
 
-   let randomId = Math.floor(Math.random() * 9) % +1;
+   const renderMenuItem = price.map((_, i) => (
+      <MenuItem key={i} value={price[i]}>  {`${amount[i]} - ${price[i]} TL`}  </MenuItem>
+   ));
+   console.log(renderMenuItem);
 
-   const renderMenuItem = baklava.price.map((_, i) => <MenuItem value={price[i]}>{`${amount[i]} - ${price[i]} TL`}</MenuItem>);
-
-   const renderList = baklavalar.map((baklava, index) => {
+   const renderList = baklavalar.map((value, index) => {
       return (
          <div className="item" key={index.toString()}>
-            <Link to={`/baklavalar/${baklava.id}`}>
-               <Item src={process.env.PUBLIC_URL + baklava.imgUrl} title={baklava.title} price={baklava.price[0]} id={baklava.id} />
+            <Link to={`/baklavalar/${value.id}`}>
+               <Item src={process.env.PUBLIC_URL + value.imgUrl} title={value.title} price={value.price[0]} id={value.id} />
             </Link>
          </div>
       );
    });
+
+   console.log(renderList);
 
    return (
       <section className="product">
@@ -139,7 +143,7 @@ function ProductPage({ match }) {
                                  className={classes.selectEmpty}
                                  inputProps={{ 'aria-label': 'Without label' }}
                               >
-                                 <MenuItem value={false}>
+                                 <MenuItem value=''>
                                     <em>Miktar Seçiniz</em>
                                  </MenuItem>
                                  {renderMenuItem}
@@ -153,21 +157,28 @@ function ProductPage({ match }) {
                   </div>
                </div>
             </div>
-            <div className="container mt-5">
+            {/* <div className="container mt-5">
                <div className="product__other row">
                   <h2>DİĞER ÜRÜNLERİMİZ</h2>
                </div>
             </div>
             <div className="product__other__slide mt-5">
                <Slider {...settings}>
-                  {renderList}
+                  <div>
+                     {renderList}
+                  </div>
                   <div className="item">
-                     <Link to={`/baklavalar/${baklavalar[randomId].id}`}>
-                        <Item src={process.env.PUBLIC_URL + baklavalar[randomId].imgUrl} title={baklavalar[randomId].title} price={baklavalar[randomId].price[0]} id={baklavalar[randomId].id} />
+                     <Link to={`/baklavalar/${baklava.id}`}>
+                        <Item
+                           src={process.env.PUBLIC_URL + baklava.imgUrl}
+                           title={baklava.title}
+                           price={Array.isArray(baklava.price) ? baklava.price[0] : ''}
+                           id={baklava.id}
+                        />
                      </Link>
                   </div>
                </Slider>
-            </div>
+            </div> */}
 
          </div>
       </section>

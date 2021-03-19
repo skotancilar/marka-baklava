@@ -1,24 +1,21 @@
-import React/*, { useEffect, useState }*/ from 'react';
+import React, { useEffect, useState } from 'react';
 import Item from './Item';
 import "./ItemList.scss";
-import { baklavalar } from "../apis/data";
+// import { baklavalar } from "../apis/data";
 import { Link } from 'react-router-dom';
+import firebase from '../firebase'
 
 const ItemList = (props) => {
-   // const [baklavalar, setBaklavalar] = useState([]);
+   const [baklavalar, setBaklavalar] = useState([]);
+   useEffect(() => {
 
-   // const getData = async () => {
-   //    const response = await data.get('/baklavalar');
+      const baklavalarRef = firebase.database().ref('baklavalar');
+      const listener = baklavalarRef.on("value", (snapshot) => {
+         setBaklavalar(snapshot.val());
+      });
+      return () => { baklavalarRef.off('value', listener); }
+   }, []);
 
-   //    setBaklavalar(response.data);
-   // }
-
-   // useEffect(() => {
-   //    getData();
-   //    return () => {
-
-   //    }
-   // }, []);
 
    const renderList = baklavalar.map((baklava, index) => {
       return (

@@ -26,8 +26,9 @@ function App() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 4000)
-  }, [])
+    }, 2000);
+  }, []);
+
   return (
     <div className="App">
       {
@@ -37,7 +38,6 @@ function App() {
             <SyncLoader color={'white'} css={override} loading={loading} size={30} margin={6} />
           </div>
         )
-
           :
           <Router>
             <div>
