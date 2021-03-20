@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Header.scss";
 import SlideItem from './SlideItem';
-import Slider from 'infinite-react-carousel';
+import Slider from 'infinite-react-carousel/lib/index';
 
 const Header = () => {
    const settings = {

@@ -1,0 +1,77 @@
+@import './abstracts/variables';
+.payment {
+	& button {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		background-color: #fe4f34;
+		color: white;
+		border-radius: 0;
+		border: none;
+		font-size: 2rem;
+		font-family: Montserrat;
+		padding: 0rem 2rem;
+		cursor: pointer;
+		margin-top: 2rem;
+		width: 100%;
+		box-shadow: 0 0 20px;
+		transform: translateY(-5px);
+		transition: all 0.1s ease-in-out;
+
+		&:hover {
+			background-color: #df442c;
+			transform: translateY(-3px);
+		}
+
+		&:active {
+			background-color: #d4422b;
+			transform: translateY(0px);
+		}
+
+		&:hover svg {
+			transform: translateX(10px);
+		}
+		&:active svg {
+			transform: translateX(25px);
+		}
+	}
+
+	&__content__item {
+		height: 50rem;
+
+		& img {
+			height: 33rem;
+		}
+	}
+
+	&__content__options svg {
+		font-size: 6rem;
+		transition: all 0.2s ease-in-out;
+	}
+
+	& h2 {
+		display: block;
+		width: 100%;
+		background-color: $ternary-color;
+		color: $color-white;
+		font-size: 4rem;
+		padding: 2rem;
+		margin: 1rem auto;
+		text-align: center;
+		font-weight: 400;
+	}
+
+	& h3 {
+		display: flex;
+		align-items: center;
+		height: auto;
+		margin: 1rem 0;
+		background-color: $ternary-color;
+		color: white;
+		font-size: 2rem;
+		font-weight: 400;
+	}
+}
+.card {
+	height: 80%;
+}

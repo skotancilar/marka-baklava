@@ -1,129 +1,152 @@
-@import "./abstracts/variables";
-@import "./abstracts/mixins";
+@import './abstracts/variables';
+@import './abstracts/mixins';
 
-section{
-   padding: 9rem 2rem 5rem;
+section {
+	padding: 9rem 2rem 5rem;
 }
 
-.product{
-   min-height: 90vh;
+.product {
+	min-height: 90vh;
 
-   &__info{
-      display: flex;
-      flex-direction: column;
-      justify-content:space-between;
+	& button {
+		background-color: #fe4f34;
+		color: white;
+		border-radius: '0';
+		border: none;
+		font-size: 2rem;
+		font-family: Montserrat;
+		padding: 2rem 2rem;
+		cursor: pointer;
+		margin-top: 2rem;
+		width: 100%;
+		box-shadow: 0 0 20px;
+		transform: translateY(-3px);
+		transition: all 0.1s ease-in-out;
 
-   @include respond (md-size){
-      margin-top: 4rem;
-   }     
+		&:hover {
+			background-color: #df442c;
+			transform: translateY(-2px);
+		}
+		&:active {
+			background-color: #ce412b;
+			transform: translateY(0px);
+		}
+	}
 
-      &__header{
-         display:flex;
-         justify-content: space-between;
-         align-items: center;
-         height: auto;
-         padding: 1rem;
-         font-size: 2rem;
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 
-         & > h1{
-         font-weight: 400;
-         margin-right: 4rem;
-      }
+		@include respond(md-size) {
+			margin-top: 4rem;
+		}
 
-         :last-child{
-            align-self: flex-end;
-         }
-      }
-      
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: auto;
+			padding: 1rem;
+			font-size: 2rem;
 
-      &__description {
-         display: flex;
-         flex-direction: column;
-         justify-content: space-between;
+			& > h1 {
+				font-weight: 400;
+				margin-right: 4rem;
+			}
 
-         & > h3{
-         display: flex;
-         align-items: center;
-         padding: 1.5rem;
-         height: auto;
-         margin:1rem 0;
-         background-color: $ternary-color;
-         color: white;
-         font-size: 2rem;
-         font-weight: 400;
-      }
-   }
+			:last-child {
+				align-self: flex-end;
+			}
+		}
 
-      &__form{
-         margin-top: 4rem;
-         display: flex;
-         justify-content: space-between;
-         font-size: large;
-         flex-wrap: wrap;
-         align-items: center;
-      }
-   }
+		&__description {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 
-   &__img {
-      object-fit: contain;
-   }
+			& > h3 {
+				display: flex;
+				align-items: center;
+				padding: 1.5rem;
+				height: auto;
+				margin: 1rem 0;
+				background-color: $ternary-color;
+				color: white;
+				font-size: 2rem;
+				font-weight: 400;
+			}
+		}
 
-   &__img > img {
-      position: relative;
-      display: block;
-      margin: auto auto;
-      width: 80% ;
-      height: auto;
-      box-shadow:5px 11px 25px -5px rgba(12, 12, 12, 0.349); 
-   }
+		&__form {
+			margin-top: 4rem;
+			display: flex;
+			justify-content: space-between;
+			font-size: large;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+	}
 
-   &__other{
+	&__img {
+		object-fit: contain;
+	}
 
-      margin-top: 3rem;
+	&__img > img {
+		position: relative;
+		display: block;
+		margin: auto auto;
+		width: 80%;
+		height: auto;
+		box-shadow: 5px 11px 25px -5px rgba(12, 12, 12, 0.349);
+	}
 
-      & h2{
-      display: block;
-      width: 100%;
-      background-color: $ternary-color;
-      color: $color-white;
-      font-size: 4rem;
-      padding: 2rem;
-      margin:1rem auto;
-      text-align: center;
-      font-weight: 400;
-   }
+	&__other {
+		margin-top: 3rem;
 
-      @include respond (md-size){
-         font-size: 4rem;
-      }
-   }
- .carousel-item{
-   padding:0 2.5rem;
- } 
+		& h2 {
+			display: block;
+			width: 100%;
+			background-color: $ternary-color;
+			color: $color-white;
+			font-size: 4rem;
+			padding: 2rem;
+			margin: 1rem auto;
+			text-align: center;
+			font-weight: 400;
+		}
 
- .item {
-    padding:0 0.5rem;
+		@include respond(md-size) {
+			font-size: 4rem;
+		}
+	}
 
-    & p{
-       font-size: inherit;
-       @include respond (sm-size){
-          font-size: 1.5rem ;
-       }
-   }
- }
+	.carousel-item {
+		padding: 0 2.5rem;
+	}
+
+	.item {
+		padding: 0 0.5rem;
+
+		& p {
+			font-size: inherit;
+			@include respond(sm-size) {
+				font-size: 1.5rem;
+			}
+		}
+	}
 }
 
-.product__info__description ul{
-   margin-top: 3rem 0 0 1rem;
-   list-style: circle;
-   flex-direction: column;
-   & li {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-      line-height: 130%;
-      & span{
-         color: red
-      }
-   }
+.product__info__description ul {
+	margin-top: 3rem 0 0 1rem;
+	list-style: circle;
+	flex-direction: column;
+	& li {
+		margin-top: 1rem;
+		font-size: 1.5rem;
+		line-height: 130%;
+		& span {
+			color: red;
+		}
+	}
 }
-

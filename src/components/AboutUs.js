@@ -9,9 +9,6 @@ const AboutUs = () => {
             <div className="row">
                <div className="col-lg-6 about__img">
                   <img src={process.env.PUBLIC_URL + '/img/1.jpg'} alt='About us' />
-                  {/* <Button color="primary">
-                     Şimdi Sipariş Ver
-                  </Button> */}
                </div>
                <div className="col-lg-6 about__us">
                   <h1>Marka Baklava</h1>
