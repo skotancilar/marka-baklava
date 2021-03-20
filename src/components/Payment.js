@@ -31,10 +31,10 @@ const Payment = ({ match }) => {
                <h2>Ödeme Seçenekleri</h2>
             </div>
             <div className="payment__content row">
-               <div className="payment__content__item col-6 d-flex ">
+               <div className="payment__content__item col-sm-6 d-flex ">
                   <Item src={process.env.PUBLIC_URL + imgUrl} title={title} price={price[0]} id={id} />
                </div>
-               <div className="payment__content__options col-6 d-flex flex-column">
+               <div className="payment__content__options col-sm-6 d-flex flex-column">
                   <div className="payment__content__options-eft  mb-5">
                      <button className="shopier" id={match.params.id}>EFT ile Ödeme Bildir <ArrowRightAltIcon /></button>
                      <h3>Banka Hesap Bilgileri</h3>
