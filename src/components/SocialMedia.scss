@@ -12,7 +12,7 @@
 	margin: 0 2rem;
 
 	@include respond(sm-size) {
-		margin: 0 1rem 0 0;
+		margin: 0;
 	}
 
 	&__brand {
@@ -34,7 +34,4 @@
 
 .navbar__socialMedia > svg {
 	font-size: 5rem;
-}
-
-.footer__socialmedia {
 }

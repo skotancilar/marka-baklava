@@ -1,15 +1,43 @@
 import React from 'react';
 import './BankAccounts.scss'
+import CallIcon from '@material-ui/icons/Call';
 
 const BankAccounts = () => {
    return (
       <section className="accounts">
          <div className="container">
-            <div className="col">
-               <div className="row">
-                  <h2>Banka Hesaplarimiz</h2>
-                  <br />
-                  <p>TR030004600642888000209807 Mustafa Aydoğan Akbank</p>
+            <div className="row">
+               <div className="col">
+                  <h1  >Banka Hesaplarimiz</h1>
+                  <table class="minimalistBlack">
+                     <thead>
+                        <tr>
+                           <th>Banka</th>
+                           <th>IBAN</th>
+                           <th>Hesap Sahibi</th>
+                        </tr>
+                     </thead>
+                     {/* <tfoot>
+                        <tr>
+                           <td>Akbank</td>
+                           <td></td>
+                           <td>foot3</td>
+                        </tr>
+                     </tfoot> */}
+                     <tbody>
+                        <tr>
+                           <td>Akbank</td>
+                           <td>TR030004600642888000209807</td>
+                           <td>Mustafa Aydoğan</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div className="accounts__button">
+                     <button onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = `https://api.whatsapp.com/send?phone=905517462326`;
+                     }} className="shopier" > <CallIcon /> <h4>EFT ile Ödemeyi Bildir</h4></button>
+                  </div>
                </div>
             </div>
          </div>

@@ -12,13 +12,10 @@ import classNames from 'classnames';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 const Navbar = () => {
-
    const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
-   const [mobileSidebarSlideEffect, setMobileSidebarSlideEffect] = useState(true)
 
    function toggleMenu() {
       setMobileMenuOpen(!mobileMenuOpen);
-      setMobileSidebarSlideEffect(!mobileSidebarSlideEffect);
    }
 
 
@@ -34,21 +31,21 @@ const Navbar = () => {
                      <span><a href="tel://905517462326">0551 746 23 26</a></span>
                   </div>
                </h1>
-               <div className="d-none d-md-block">
-                  <ul className="d-flex justify-content-center">
+               <div className="navbar__side__menu d-none d-md-block justify-content-center">
+                  <ul className="d-flex flex-row justify-content-around">
                      <li>
                         <Link to='/'>
-                           <h1 className="navbar__side__contact" >Anasayfa</h1>
+                           <h1 className="navbar__side__title" >Anasayfa</h1>
                         </Link>
                      </li>
                      <li>
                         <Link to='/hakkimizda'>
-                           <h1 className="navbar__side__contact" >Hakkımızda</h1>
+                           <h1 className="navbar__side__title" >Hakkımızda</h1>
                         </Link>
                      </li>
                      <li>
                         <Link to='/baklavalar'>
-                           <h1 className="navbar__side__contact" >Ürünlerimiz</h1>
+                           <h1 className="navbar__side__title" >Ürünlerimiz</h1>
                         </Link>
                      </li>
                   </ul>
@@ -80,17 +77,17 @@ const Navbar = () => {
                   <ul>
                      <li>
                         <Link to='/'>
-                           <h1>Anasayfa</h1>
+                           <h1 onClick={toggleMenu}>Anasayfa</h1>
                         </Link>
                      </li>
                      <li>
                         <Link to='/hakkimizda'>
-                           <h1>Hakkımızda</h1>
+                           <h1 onClick={toggleMenu}>Hakkımızda</h1>
                         </Link>
                      </li>
                      <li>
                         <Link to='/baklavalar'>
-                           <h1>Ürünlerimiz</h1>
+                           <h1 onClick={toggleMenu}>Ürünlerimiz</h1>
                         </Link>
                      </li>
                   </ul>
