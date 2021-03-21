@@ -1,0 +1,15 @@
+@import './abstracts/variables';
+
+.accounts {
+	& h2 {
+		display: block;
+		align-items: center;
+		padding: 1.5rem;
+		margin: auto;
+		background-color: $ternary-color;
+		color: white;
+		font-size: 2rem;
+		font-weight: 400;
+		text-align: center;
+	}
+}

@@ -1,151 +1,154 @@
-@import "./abstracts/mixins";
-@import "./abstracts/variables";
+@import './abstracts/mixins';
+@import './abstracts/variables';
 
-.navbar{
-   width: 100%;
-   height: 80px;
-   top: 0;
-   position: sticky;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   background: linear-gradient(90deg, rgba(76,36,28,1) 0%, rgba(117, 55, 42, 0.966) 50%, rgba(76,36,28,1) 100%);
-   color: rgb(240, 240, 240);
-   box-shadow: 0px 11px 45px -12px rgba(75, 26, 26, 0.78);
-   z-index: 100;
+.navbar {
+	width: 100%;
+	height: 80px;
+	top: 0;
+	position: sticky;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: linear-gradient(
+		90deg,
+		rgba(76, 36, 28, 1) 0%,
+		rgba(117, 55, 42, 0.966) 50%,
+		rgba(76, 36, 28, 1) 100%
+	);
+	color: rgb(240, 240, 240);
+	box-shadow: 0px 11px 45px -12px rgba(75, 26, 26, 0.78);
+	z-index: 100;
 
-   @include respond (xl-size){
-      height: 90px;
-      }
-   
-   @include respond (lg-size){
-      height: 72px;
-      }
+	@include respond(xl-size) {
+		height: 90px;
+	}
 
-   @include respond (md-size){
-      height: 65px;
-      }
-      
+	@include respond(lg-size) {
+		height: 72px;
+	}
 
-   &__side{
-      display: flex;  
-      align-items: center;
-      justify-content: space-between;
-      flex : 1 0 34vw;
-      height: 7rem;
+	@include respond(md-size) {
+		height: 65px;
+	}
 
-      @include respond (sm-size){
-         flex : 1 0 29vw;         
-         justify-content: space-around;
-      }
+	&__side {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex: 1 0 34%;
+		height: 7rem;
 
-      & > svg {
-         cursor: pointer;
-            display: none;
+		@include respond(sm-size) {
+			flex: 1 0 29%;
+			justify-content: space-around;
+		}
 
-         @include respond (md-size){
-            display: block;
-   }
-      }
+		& > svg {
+			cursor: pointer;
+			display: none;
 
-      &__contact{
-         margin: 0 1rem;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         font-family: 'Montserrat';
-         font-weight: 700;
-         font-size: 1.8rem;
+			@include respond(md-size) {
+				display: block;
+			}
+		}
 
-         & > div {
-            font-family: 'Montserrat';
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+		&__contact {
+			margin: 0 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: 'Montserrat';
+			font-weight: 700;
+			font-size: 1.5rem;
 
-         
-         }
+			& > div {
+				font-family: 'Montserrat';
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+			}
 
-         & img {
-            height: 4rem !important;
-            margin: 1rem !important;
-            animation: none !important;
+			& img {
+				height: 4rem !important;
+				margin: 1rem !important;
+				animation: none !important;
 
+				@include respond(sm-size) {
+					display: none;
+				}
+			}
 
-            @include respond (sm-size){
-               display: none;
-            }
-         }
+			&__contact > span {
+				display: inline;
 
-      &__contact > span{
-         display: inline;
+				@include respond(md-size) {
+					display: block;
+				}
+			}
+			// @include respond (lg-size){
+			//    justify-content: column;
+			//    font-size: 1.2rem;
+			// }
 
-         @include respond (md-size){
-            display:block
-         }
-      }
-         // @include respond (lg-size){
-         //    justify-content: column;
-         //    font-size: 1.2rem;
-         // }
-      
-         @include respond (md-size){
-            // display: none;
-            font-size: 1.5rem;
-         }
-         @include respond (sm-size){
-            // display: none;
-            font-size: 1.5rem;
-         }
-      }
-      &__contact > span > a{
-         text-decoration: none;
-         color: inherit ;
-      }
-   }
+			@include respond(md-size) {
+				// display: none;
+				font-size: 1.5rem;
+			}
+			@include respond(sm-size) {
+				// display: none;
+				font-size: 1.5rem;
+			}
+		}
+		&__contact > span > a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
 
-   &__logo{
-     flex: 1 0 20vw;
-   }
+	&__logo {
+		flex: 1 0 20vw;
+	}
 }
 
-ul{
-   list-style: none;
+ul {
+	list-style: none;
 }
 
-@media screen and (max-width:1650px) and (min-width:768px) {
-   .navbar__side__contact  span{
-      display: none;
-   }
+@media screen and (max-width: 1650px) and (min-width: 768px) {
+	.navbar__side__contact span {
+		display: none;
+	}
 }
 
-.mobile-sidebar{
-   position:fixed;
-   display: none;
-   background: linear-gradient(90deg, rgba(76, 36, 28, 0) 0%, rgba(117, 55, 42, 0.966) 40%, rgba(76,36,28,1) 100%);
-   height: auto;
-   z-index: 99;
-   color: white;
-   transition: all .5s ease-in;
-   transform: translateY(-20rem);
-   opacity: 0;
+.mobile-sidebar {
+	position: fixed;
+	display: none;
+	background: linear-gradient(
+		90deg,
+		rgba(76, 36, 28, 0) 0%,
+		rgba(117, 55, 42, 0.966) 40%,
+		rgba(76, 36, 28, 1) 100%
+	);
+	height: auto;
+	z-index: 99;
+	color: white;
+	transition: all 0.3s ease-in;
+	transform: translateY(-20rem);
+	opacity: 0;
 
-   &.mobile-sidebar__slide{
-      transform: translateY(0rem);
-      opacity: 1;
-   }
+	&.mobile-sidebar__slide {
+		transform: translateY(0rem);
+		opacity: 1;
+	}
 
-   & li {
-      margin:4rem 2rem ;
-      text-align: right;
-      font-size: 1rem
-   }
-   @include respond (md-size){
-      display: block;
-   }
-
+	& li {
+		margin: 4rem 2rem;
+		text-align: right;
+		font-size: 1rem;
+	}
+	@include respond(md-size) {
+		display: block;
+	}
 }
-
-

@@ -78,7 +78,7 @@ function ProductPage({ match }) {
 
    const renderList = baklavalar.map((value, index) => {
       return (
-         <div className="item col-md-3" key={index.toString()}>
+         <div className="item col-md-3 col-sm-4 col-6" key={index.toString()}>
             <Link to={`/baklavalar/${value.id}`}>
                <Item src={process.env.PUBLIC_URL + value.imgUrl} title={value.title} price={value.price[0]} id={value.id} />
             </Link>

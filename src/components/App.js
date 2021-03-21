@@ -12,6 +12,8 @@ import AboutUs from './AboutUs';
 import Payment from './Payment';
 import SyncLoader from "react-spinners/SyncLoader";
 import Logo from './Logo';
+import BankAccounts from './BankAccounts';
+import NotFound from './NotFound';
 
 const override = `
   display: block;
@@ -49,7 +51,9 @@ function App() {
                   <Route path="/baklavalar/:id" exact component={ProductPage} />
                   <Route path="/hakkimizda" exact component={AboutUs} />
                   <Route path="/odeme/:id" exact component={Payment} />
+                  <Route path="/banka-hesaplari" exact component={BankAccounts} />
                 </ScrollToTop>
+                <Route component={NotFound} />
               </Switch>
               <WhatsApp src={process.env.PUBLIC_URL + '/img/whatsapp.svg'} alt="WhatsApp logo" />
               <Footer />

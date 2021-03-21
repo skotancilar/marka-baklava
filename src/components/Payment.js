@@ -3,6 +3,9 @@ import Item from './Item';
 import firebase from '../firebase'
 import './Payment.scss'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+import CreditCardIcon from '@material-ui/icons/CreditCard';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import { Link } from 'react-router-dom';
 
 const Payment = ({ match }) => {
    const [baklavalar, setBaklavalar] = useState([]);
@@ -36,10 +39,12 @@ const Payment = ({ match }) => {
                </div>
                <div className="payment__content__options col-sm-6 d-flex flex-column">
                   <div className="payment__content__options-eft  mb-5">
-                     <button className="shopier" id={match.params.id}>EFT ile Ödeme Bildir <ArrowRightAltIcon /></button>
-                     <h3>Banka Hesap Bilgileri</h3>
+                     <Link to="/banka-hesaplari">
+                        <button className="shopier" id={match.params.id}> <AccountBalanceWalletIcon /> <h4>EFT ile Ödeme</h4><ArrowRightAltIcon /></button>
+                     </Link>
+                     <h3>Değerli Müşterilerimizin Dikkatine!</h3>
                      <ul className="mt-4">
-                        <li><b>İNTERNET SİTEMİZ ÜZERİNDEN YAPILAN ALIŞVERİŞLERDE KARGO ÜCRETİ MÜŞTERİMİZE AİTTİR. ORTALAMA TESLİMAT SÜRESİ 1-3 GÜNDÜR.</b></li>
+                        <li><b>İNTERNET SİTEMİZ ÜZERİNDEN YAPILAN ALIŞVERİŞLERDE <u>KARGO ÜCRETİ MÜŞTERİMİZE AİTTİR</u>. ORTALAMA TESLİMAT SÜRESİ 1-3 GÜNDÜR.</b></li>
                         <li><b>300 TL ÜZERİ</b> ALIŞVERİŞLERDE KARGO ÜCRETİNİ BİZ KARŞILAMAKTAYIZ.</li>
                         <li> <b><span>ANKARA</span></b> VE <b><span>İSTANBUL’DA</span></b> İKAMET EDEN MÜŞTERİLERİMİZE; <b><u>EFT’Lİ ÖDEMELERDE</u></b> VİP KARGO HİZMETİYLE ÜRÜNLERİMİZİ <b>24 SAAT</b> İÇERİSİNDE ULAŞTIRMAKTAYIZ.</li>
                         <li>MÜŞTERİLERİMİZİN <b><u>EFT’Lİ ÖDEMELERDE</u></b> TÜRKİYE’NİN HER NOKTASINA ŞEHİRLERARASI OTOBÜS İLE ÜRÜNLERİMİZİ ULAŞTIRMAKTAYIZ.</li>
@@ -47,7 +52,10 @@ const Payment = ({ match }) => {
                   </div>
                   <hr></hr>
                   <div className="payment__content__options-kredikarti mt-3">
-                     <button className="shopier" id={match.params.id}>Kredi Karti ile Ödeme <ArrowRightAltIcon /></button>
+                     <button className="shopier" id={match.params.id.toString()} onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = `http://shopier.com/${id}`;
+                     }}><CreditCardIcon /> <h4>Kredi Karti ile Ödeme</h4> <ArrowRightAltIcon /> </button>
                   </div>
                </div>
             </div>

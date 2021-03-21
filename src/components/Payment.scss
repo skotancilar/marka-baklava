@@ -1,10 +1,18 @@
 @import './abstracts/variables';
 .payment {
+	& ul {
+		list-style: circle;
+		& li {
+			margin-top: 1rem;
+		}
+	}
+
 	& button {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		background-color: #fe4f34;
+		background-color: saturate($ternary-color, 20%);
+		justify-self: center;
 		color: white;
 		border-radius: 0;
 		border: none;
@@ -12,27 +20,36 @@
 		font-family: Montserrat;
 		padding: 0rem 2rem;
 		cursor: pointer;
-		margin-top: 2rem;
-		width: 100%;
-		box-shadow: 0 0 20px;
-		transform: translateY(-5px);
+		margin: 2rem auto 0;
+		width: 80%;
+		box-shadow: 5px 11px 25px -5px rgba(12, 12, 12, 0.39);
+		transform: translateY(-2px);
 		transition: all 0.1s ease-in-out;
+		outline: 5px solid saturate($ternary-color, 100%);
 
 		&:hover {
-			background-color: #df442c;
-			transform: translateY(-3px);
+			background-color: saturate($ternary-color, 40%);
+			outline: 7px solid saturate($ternary-color, 100%);
+			width: 83%;
 		}
 
 		&:active {
-			background-color: #d4422b;
+			background-color: saturate($ternary-color, 80%);
 			transform: translateY(0px);
 		}
 
-		&:hover svg {
+		&:hover svg:last-child {
 			transform: translateX(10px);
 		}
-		&:active svg {
+		&:hover svg:first-child {
+			transform: translateX(0px);
+		}
+
+		&:active svg:last-child {
 			transform: translateX(25px);
+		}
+		&:active svg:first-child {
+			transform: translateX(0px);
 		}
 	}
 
@@ -44,9 +61,18 @@
 		}
 	}
 
-	&__content__options svg {
-		font-size: 6rem;
+	&__content__options {
+	}
+	& h4 {
+		font-weight: 400;
+	}
+	& svg {
+		font-size: 5rem;
 		transition: all 0.2s ease-in-out;
+
+		&:first-child {
+			font-size: 3rem;
+		}
 	}
 
 	& h2 {
@@ -66,10 +92,11 @@
 		align-items: center;
 		height: auto;
 		margin: 1rem 0;
-		background-color: $ternary-color;
+		background-color: $accent-color-warning;
 		color: white;
 		font-size: 2rem;
 		font-weight: 400;
+		padding: 1rem;
 	}
 }
 .card {

@@ -1,42 +1,40 @@
-@import "./abstracts/variables";
-@import "./abstracts/mixins";
+@import './abstracts/variables';
+@import './abstracts/mixins';
 
-.navbar__socialMedia{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex: 1 0 auto;
-   text-decoration: none;
-   color: inherit;
-   font-family: 'DINPro-Regular';
-   margin:0 2rem;
+.navbar__socialMedia {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1 0 auto;
+	text-decoration: none;
+	color: inherit;
+	font-family: 'DINPro-Regular';
+	margin: 0 2rem;
 
-   @include respond (sm-size){
-      margin:0  1rem 0 0;
-   }
+	@include respond(sm-size) {
+		margin: 0 1rem 0 0;
+	}
 
+	&__brand {
+		font-size: xx-large;
 
-   &__brand{
-      font-size: xx-large;
+		@include respond(lg-size) {
+			font-size: large;
+		}
 
-      @include respond (lg-size){
-        font-size: large;
-      }
+		@include respond(md-size) {
+			font-size: medium;
+		}
 
-      @include respond (md-size){
-        font-size: medium;
-      }
-
-      @include respond (sm-size){
-         display: none;
-      }
-   }
+		@include respond(sm-size) {
+			display: none;
+		}
+	}
 }
 
 .navbar__socialMedia > svg {
-   font-size: 5rem;
+	font-size: 5rem;
 }
 
-.footer__socialmedia{
-   
+.footer__socialmedia {
 }

@@ -1,18 +1,17 @@
 @mixin clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 }
 
 @mixin absCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-
 
 // MEDIA QUERY MANAGER
 /*
@@ -34,16 +33,24 @@ ORDER: Base + typography > general layout + grid > page layout > components
 */
 
 @mixin respond($breakpoint) {
-    @if $breakpoint == sm-size {
-        @media only screen and (max-width: 36em) { @content };    //576px
-    }
-    @if $breakpoint == md-size {
-        @media only screen and (max-width: 48em) { @content };     //768px
-    }
-    @if $breakpoint == lg-size {
-        @media only screen and (max-width: 62em) { @content };    //900px
-    }
-    @if $breakpoint == xl-size {
-        @media only screen and (min-width: 75em) { @content };    //1200
-    }
+	@if $breakpoint == sm-size {
+		@media only screen and (max-width: 36em) {
+			@content;
+		} //576px
+	}
+	@if $breakpoint == md-size {
+		@media only screen and (max-width: 47.9em) {
+			@content;
+		} //768px
+	}
+	@if $breakpoint == lg-size {
+		@media only screen and (max-width: 62em) {
+			@content;
+		} //900px
+	}
+	@if $breakpoint == xl-size {
+		@media only screen and (min-width: 75em) {
+			@content;
+		} //1200
+	}
 }

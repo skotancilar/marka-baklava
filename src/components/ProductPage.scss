@@ -9,7 +9,7 @@ section {
 	min-height: 90vh;
 
 	& button {
-		background-color: #fe4f34;
+		background-color: saturate($ternary-color, 20%);
 		color: white;
 		border-radius: '0';
 		border: none;
@@ -24,11 +24,11 @@ section {
 		transition: all 0.1s ease-in-out;
 
 		&:hover {
-			background-color: #df442c;
+			background-color: saturate($ternary-color, 40%);
 			transform: translateY(-2px);
 		}
 		&:active {
-			background-color: #ce412b;
+			background-color: saturate($ternary-color, 80%);
 			transform: translateY(0px);
 		}
 	}
@@ -75,6 +75,7 @@ section {
 				color: white;
 				font-size: 2rem;
 				font-weight: 400;
+				text-align: center;
 			}
 		}
 
@@ -141,6 +142,7 @@ section {
 	margin-top: 3rem 0 0 1rem;
 	list-style: circle;
 	flex-direction: column;
+	padding: 0 3rem;
 	& li {
 		margin-top: 1rem;
 		font-size: 1.5rem;
