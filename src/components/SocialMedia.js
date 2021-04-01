@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const SocialMedia = ({ href, text }) => {
    const classes = useStyles();
    return (
-      <a className="navbar__socialMedia" href={href}>
+      <a className="navbar__socialMedia" target='_blank' rel="noreferrer" href={href}>
          <InstagramIcon className={classes.icon} />
          <span className="navbar__socialMedia__brand">{text}</span>
       </a>
