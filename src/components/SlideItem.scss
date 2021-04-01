@@ -6,14 +6,18 @@
 	height: auto;
 	vertical-align: middle;
 	object-fit: cover;
-	cursor: pointer;
 }
 .header__item {
 	text-align: center;
+	width: 100%;
 	background: linear-gradient(
 		90deg,
 		rgba(76, 36, 28, 1) 0%,
 		rgba(117, 55, 42, 0.966) 50%,
 		rgba(76, 36, 28, 1) 100%
 	);
+}
+.carousel-item{
+object-fit: cover;
+width: 100%;
 }

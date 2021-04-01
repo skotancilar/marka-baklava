@@ -10,16 +10,16 @@ import WhatsApp from './WhatsApp';
 import ScrollToTop from './ScroollToTop';
 import AboutUs from './AboutUs';
 import Payment from './Payment';
-import SyncLoader from "react-spinners/SyncLoader";
+// import ClockLoader from "react-spinners/ClockLoader";
 import Logo from './Logo';
 import BankAccounts from './BankAccounts';
 import NotFound from './NotFound';
 
-const override = `
-  display: block;
-  margin: 0 auto;
-  border-color: white;
-`;
+// const override = `
+//   display: block;
+//   margin: 0 auto;
+//   border-color: white;
+// `;
 
 function App() {
   const [loading, setLoading] = useState(false)
@@ -28,7 +28,7 @@ function App() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 2000);
+    }, 3000);
   }, []);
 
   return (
@@ -37,7 +37,7 @@ function App() {
         loading ? (
           <div className="spinner">
             <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
-            <SyncLoader color={'white'} css={override} loading={loading} size={30} margin={6} />
+            {/* <ClockLoader color={'white'} css={override} loading={loading} size={100} margin={6} /> */}
           </div>
         )
           :

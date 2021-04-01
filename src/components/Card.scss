@@ -22,7 +22,7 @@
       // flex: 1 0 100%;
       
       &:hover{
-      border: 9px solid $primary-color;
+      border: 5px solid $primary-color;
 
       @include respond (sm-size){
          border: 0px solid transparent;
@@ -52,7 +52,7 @@
       margin-top:1rem;
       padding: 0.5rem 0;
       font-size: 2rem;
-      text-transform: uppercase;
+      text-transform: capitalize;
       background-color: rgba(138, 138, 138, 0.055);
    }
 

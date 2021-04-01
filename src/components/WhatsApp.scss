@@ -1,9 +1,8 @@
 .whatsapp{
    position: sticky;
    height: auto;
-   width: auto;
+   width: 4rem;
    bottom: 0rem;
-   z-index: 1000;
 
 }
 
@@ -16,6 +15,7 @@
    transform: translate3d(0, 0, 0);
    backface-visibility: hidden;
    perspective: 1000px;
+   z-index: 1000;
    
 }
 
