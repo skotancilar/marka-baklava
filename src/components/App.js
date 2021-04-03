@@ -13,7 +13,7 @@ import Payment from './Payment';
 // import ClockLoader from "react-spinners/ClockLoader";
 import Logo from './Logo';
 import BankAccounts from './BankAccounts';
-import NotFound from './NotFound';
+import firebase from '../firebase';
 
 // const override = `
 //   display: block;
@@ -22,13 +22,14 @@ import NotFound from './NotFound';
 // `;
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000);
+    const baklavalarRef = firebase.database().ref('baklavalar');
+    const listener = baklavalarRef.on("value", (snapshot) => {
+      setLoading(true);
+    });
+    return () => baklavalarRef.off('value', listener);
   }, []);
 
   return (
@@ -37,6 +38,7 @@ function App() {
         loading ? (
           <div className="spinner">
             <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
+            <h1 style={{ color: 'white' }}>Sitemiz bakım faaliyetleri nedeniyle bir süreliğine kullanım dışıdır.</h1>
             {/* <ClockLoader color={'white'} css={override} loading={loading} size={100} margin={6} /> */}
           </div>
         )
@@ -53,7 +55,6 @@ function App() {
                   <Route path="/odeme/:id" exact component={Payment} />
                   <Route path="/banka-hesaplari" exact component={BankAccounts} />
                 </ScrollToTop>
-                <Route component={NotFound} />
               </Switch>
               <WhatsApp src={process.env.PUBLIC_URL + '/img/whatsapp.svg'} alt="WhatsApp logo" />
               <Footer />
