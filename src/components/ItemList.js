@@ -19,7 +19,7 @@ const ItemList = (props) => {
       return (
          <div className="item col-xl-3 col-lg-4 col-6" key={index.toString()}>
             <Link to={`/baklavalar/${baklava.portions[0].id}`}>
-               < Item src={process.env.PUBLIC_URL + baklava?.portions[0]?.imgUrl} title={baklava.title} price={baklava.portions[0].price} id={baklava.portions[0].id} />
+               < Item src={process.env.PUBLIC_URL + baklava?.portions[0]?.imgUrl} title={baklava.title} price={baklava.portions[0].price} id={baklava.portions[0].id} unit={true} />
             </Link>
          </div>
       );

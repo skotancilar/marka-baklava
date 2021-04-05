@@ -19,6 +19,7 @@ const Payment = ({ match }) => {
    let title = baklava?.title || '';
    let price = baklava?.portions?.map(portion => portion.price) || '';
    let imgUrl = baklava?.portions?.map(portion => portion.imgUrl) || '';
+   let amount = baklava?.portions?.map(portion => portion.amount) || '';
 
    useEffect(() => {
       const baklavalarRef = firebase.database().ref('baklavalar');
@@ -37,7 +38,7 @@ const Payment = ({ match }) => {
             <div className="row payment__content">
                <div className="col-md-6">
                   <div className="payment__content__item  ">
-                     <Item src={process.env.PUBLIC_URL + imgUrl[recentPortion]} title={title} price={price[recentPortion]} id={id} />
+                     <Item src={process.env.PUBLIC_URL + imgUrl[recentPortion]} amount={`- ${amount[recentPortion]?.slice(0, 11)}`} title={title} unit={false} price={price[recentPortion]} id={id} />
                   </div>
                </div>
                <div className="col-md-6 d-flex flex-column justify-content-center  ">
@@ -58,8 +59,10 @@ const Payment = ({ match }) => {
                            <button> <AccountBalanceWalletIcon /> EFT ile Ödeme<ArrowRightAltIcon /></button>
                         </Link>
                         <button className="shopier" id={match.params.id.toString()} onClick={(e) => {
-                           e.preventDefault();
-                           window.location.href = `http://shopier.com/${portionId}`;
+                           if (portionId) {
+                              e.preventDefault();
+                              window.location.href = `http://shopier.com/${portionId}`;
+                           }
                         }}><CreditCardIcon /> Kredi Karti ile Ödeme <ArrowRightAltIcon /> </button>
                      </div>
                   </div>

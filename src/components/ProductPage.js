@@ -125,9 +125,13 @@ function ProductPage({ match }) {
                               </Select>
                            </FormControl>
                         </div>
-                        <Link to={`/odeme/${recentPortion}${portionIds[recentPortion]}`}>
+                        {portionIds[recentPortion] ? <Link to={`/odeme/${recentPortion}${portionIds[recentPortion]}`}>
                            <button className="shopier">Hemen Al</button>
                         </Link>
+                           :
+                           null
+                        }
+
                      </form>
                   </div>
                </div>
