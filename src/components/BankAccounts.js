@@ -9,7 +9,7 @@ const BankAccounts = () => {
             <div className="row">
                <div className="col">
                   <h1  >Banka Hesaplarimiz</h1>
-                  <table class="minimalistBlack">
+                  <table className="minimalistBlack">
                      <thead>
                         <tr>
                            <th>Banka</th>

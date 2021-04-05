@@ -27,10 +27,11 @@ function App() {
   useEffect(() => {
     const baklavalarRef = firebase.database().ref('baklavalar');
     const listener = baklavalarRef.on("value", (snapshot) => {
-      setLoading(true);
+      setLoading(!snapshot.val());
     });
     return () => baklavalarRef.off('value', listener);
   }, []);
+
 
   return (
     <div className="App">
@@ -38,7 +39,6 @@ function App() {
         loading ? (
           <div className="spinner">
             <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
-            <h1 style={{ color: 'white' }}>Sitemiz bakım faaliyetleri nedeniyle bir süreliğine kullanım dışıdır.</h1>
             {/* <ClockLoader color={'white'} css={override} loading={loading} size={100} margin={6} /> */}
           </div>
         )

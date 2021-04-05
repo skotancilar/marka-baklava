@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.scss';
 import { Link } from 'react-router-dom';
 import { makeStyles, FormControl, MenuItem, Select } from '@material-ui/core'
@@ -30,18 +30,20 @@ const useStyles = makeStyles((theme) => ({
 
 function ProductPage({ match }) {
    const classes = useStyles();
+   const ref = useRef('')
    const [baklavalar, setBaklavalar] = useState([]);
-   const [miktar, setMiktar] = useState('');
+   const [recentPortion, setRecentPortion] = useState('');
 
    const id = Number(match.params.id);
 
-   const baklava = baklavalar?.find(baklava => baklava.id === id) || {};
+   const baklava = baklavalar?.find(baklava => baklava.portions[0].id === id) || {};
 
-   let title = baklava.title || '';
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   let price = baklava.price || [];
-   let imgUrl = baklava.imgUrl || '';
-   let amount = baklava.amount || '';
+   let title = baklava?.title || '';
+   let portions = baklava?.portions;
+   let price = baklava?.portions?.map(portion => portion.price) || '';
+   let imgUrl = baklava?.portions?.map(portion => portion.imgUrl) || '';
+   let amount = baklava?.portions?.map(portion => portion.amount) || '';
+   let portionIds = baklava?.portions?.map(portion => portion.id) || '';
 
    useEffect(() => {
       const baklavalarRef = firebase.database().ref('baklavalar');
@@ -51,13 +53,9 @@ function ProductPage({ match }) {
       return () => baklavalarRef.off('value', listener);
    }, []);
 
-   useEffect(() => {
-      setMiktar(price[0]);
-
-   }, [price]);
 
    const handleChange = (event) => {
-      setMiktar(event.target.value);
+      setRecentPortion(Number(event.target.value));
    };
 
    // const settings = {
@@ -71,16 +69,15 @@ function ProductPage({ match }) {
    //    slidesPerRow: 3,
    // };
 
-   const renderMenuItem = price.map((_, i) => (
-      <MenuItem key={i} value={price[i]}>  {`${amount[i]} - ${price[i]} TL`}  </MenuItem>
+   const renderMenuItem = portions?.map((_, i) => (
+      <MenuItem key={i} value={Number(i)}>  {`${(amount[i].slice(0, 11))} ${title} - ${price[i]} TL`}  </MenuItem>
    ));
-   console.log(renderMenuItem);
 
    const renderList = baklavalar.map((value, index) => {
       return (
          <div className="item col-md-3 col-sm-4 col-6" key={index.toString()}>
-            <Link to={`/baklavalar/${value.id}`}>
-               <Item src={process.env.PUBLIC_URL + value.imgUrl} title={value.title} price={value.price[0]} id={value.id} />
+            <Link to={`/baklavalar/${value?.portions[0].id}`}>
+               <Item src={process.env.PUBLIC_URL + value?.portions[0].imgUrl} title={value?.title} price={value?.portions[0].price} id={value?.portions[0].id} />
             </Link>
          </div>
       );
@@ -92,7 +89,7 @@ function ProductPage({ match }) {
             <div className="row pb-5">
                <div className="col-md-6 pr-2">
                   <div className="product__img">
-                     <img src={process.env.PUBLIC_URL + imgUrl} alt="product" />
+                     <img src={process.env.PUBLIC_URL + (imgUrl[recentPortion] || imgUrl[0])} alt="product" />
                   </div>
 
                </div>
@@ -100,7 +97,7 @@ function ProductPage({ match }) {
                   <div className="product__info">
                      <div className="product__info__header">
                         <h1>{title}</h1>
-                        <h2 >{miktar || price[0]}₺</h2>
+                        <h2 >{price[recentPortion] || price[0]}₺</h2>
                      </div>
                      <div className="product__info__description">
                         <h3>{title}</h3>
@@ -113,23 +110,23 @@ function ProductPage({ match }) {
                      </div>
                      <form className="product__info__form" noValidate autoComplete="off">
                         <div>
-                           <FormControl className={classes.formControl}>
+                           <FormControl className={classes.formControl} ref={ref}>
                               <Select
-                                 value={miktar}
+                                 value={recentPortion}
                                  onChange={handleChange}
                                  displayEmpty
                                  className={classes.selectEmpty}
                                  inputProps={{ 'aria-label': 'Without label' }}
                               >
                                  <MenuItem value=''>
-                                    <em>Miktar Seçiniz</em>
+                                    <em>Porsiyon Seçiniz</em>
                                  </MenuItem>
                                  {renderMenuItem}
                               </Select>
                            </FormControl>
                         </div>
-                        <Link to={`/odeme/${id}`}>
-                           <button className="shopier" id={match.params.id}>Hemen Al</button>
+                        <Link to={`/odeme/${recentPortion}${portionIds[recentPortion]}`}>
+                           <button className="shopier">Hemen Al</button>
                         </Link>
                      </form>
                   </div>
