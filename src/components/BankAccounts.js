@@ -8,7 +8,7 @@ const BankAccounts = () => {
          <div className="container">
             <div className="row">
                <div className="col">
-                  <h1  >Banka Hesaplarimiz</h1>
+                  <h1  >Banka Hesaplarımız</h1>
                   <table class="minimalistBlack">
                      <thead>
                         <tr>
