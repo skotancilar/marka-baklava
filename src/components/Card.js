@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Card.scss"
 
-const Card = ({ src, alt, title, price }) => {
+const Card = ({ src, alt, title, price, unit, amount }) => {
    return (
       <div className="card">
 
@@ -9,9 +9,9 @@ const Card = ({ src, alt, title, price }) => {
             <img src={src} alt={alt} />
          </div>
 
-         <div className="card__title"><p>{title}</p></div>
+         <div className="card__title"><p>{title} {amount}</p></div>
 
-         <div className="card__content"><p>{price}<span>₺/<sub>kg</sub></span></p></div>
+         <div className="card__content"><p>{price}  <span>₺{unit ? <sub>/kg</sub> : ''}</span></p></div>
       </div>
    )
 }

@@ -1,9 +1,11 @@
 @import './abstracts/variables';
 .payment {
+	
 	& ul {
 		list-style: circle;
 		& li {
 			margin-top: 1rem;
+			font-size: 1.3rem;
 		}
 	}
 
@@ -20,7 +22,7 @@
 		font-family: Montserrat;
 		padding: 0rem 2rem;
 		cursor: pointer;
-		margin: 2rem auto 0;
+		margin: 2rem auto ;
 		width: 80%;
 		box-shadow: 5px 11px 25px -5px rgba(12, 12, 12, 0.39);
 		transform: translateY(-2px);
@@ -54,14 +56,15 @@
 	}
 
 	&__content__item {
-		height: 50rem;
-
+		display: block;
+		margin: auto;
 		& img {
-			height: 33rem;
+			height: 100%;
 		}
 	}
 
 	&__content__options {
+		height: auto;
 	}
 	& h4 {
 		font-weight: 400;
@@ -98,7 +101,22 @@
 		font-weight: 400;
 		padding: 1rem;
 	}
+	.card {
+	display: block;
+	margin:2rem auto;
+	height: 100%;
+	 
+	&__title{
+      font-size: 3rem;
+   }
+	&__content{
+      font-size: 3rem;
+   }
+	&__media:hover{
+			border: 0 solid;
+		}
+	& img{
+		object-fit: cover;
+	}
 }
-.card {
-	height: 80%;
 }

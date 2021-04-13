@@ -10,6 +10,7 @@ const BankAccounts = () => {
                <div className="col">
                   <h1  >Banka Hesaplarımız</h1>
                   <table class="minimalistBlack">
+
                      <thead>
                         <tr>
                            <th>Banka</th>
@@ -27,7 +28,7 @@ const BankAccounts = () => {
                      <tbody>
                         <tr>
                            <td>Akbank</td>
-                           <td>TR030004600642888000209807</td>
+                           <td>TR03 0004 6006 4288 8000 2098 07</td>
                            <td>Mustafa Aydoğan</td>
                         </tr>
                      </tbody>

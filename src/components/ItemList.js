@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Item from './Item';
 import "./ItemList.scss";
-// import { baklavalar } from "../apis/data";
 import { Link } from 'react-router-dom';
 import firebase from '../firebase'
 
@@ -16,12 +15,11 @@ const ItemList = (props) => {
       return () => { baklavalarRef.off('value', listener); }
    }, []);
 
-
    const renderList = baklavalar.map((baklava, index) => {
       return (
          <div className="item col-xl-3 col-lg-4 col-6" key={index.toString()}>
-            <Link to={`/baklavalar/${baklava.id}`}>
-               < Item src={process.env.PUBLIC_URL + baklava.imgUrl} title={baklava.title} price={baklava.price[0]} id={baklava.id} />
+            <Link to={`/baklavalar/${baklava.portions[0].id}`}>
+               < Item src={process.env.PUBLIC_URL + baklava?.portions[0]?.imgUrl} title={baklava.title} price={baklava.portions[0].price} id={baklava.portions[0].id} unit={true} />
             </Link>
          </div>
       );

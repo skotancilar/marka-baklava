@@ -84,10 +84,15 @@ section {
 		&__form {
 			margin-top: 4rem;
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 			font-size: large;
 			flex-wrap: wrap;
+			justify-content: space-around;
 			align-items: center;
+			@include respond(md-size) {
+			justify-content: center;
+
+		}
 		}
 	}
 

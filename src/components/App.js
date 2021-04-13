@@ -10,26 +10,28 @@ import WhatsApp from './WhatsApp';
 import ScrollToTop from './ScroollToTop';
 import AboutUs from './AboutUs';
 import Payment from './Payment';
-import SyncLoader from "react-spinners/SyncLoader";
+// import ClockLoader from "react-spinners/ClockLoader";
 import Logo from './Logo';
 import BankAccounts from './BankAccounts';
-import NotFound from './NotFound';
+import firebase from '../firebase';
 
-const override = `
-  display: block;
-  margin: 0 auto;
-  border-color: white;
-`;
+// const override = `
+//   display: block;
+//   margin: 0 auto;
+//   border-color: white;
+// `;
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 2000);
+    const baklavalarRef = firebase.database().ref('baklavalar');
+    const listener = baklavalarRef.on("value", (snapshot) => {
+      setLoading(!snapshot.val());
+    });
+    return () => baklavalarRef.off('value', listener);
   }, []);
+
 
   return (
     <div className="App">
@@ -37,7 +39,7 @@ function App() {
         loading ? (
           <div className="spinner">
             <Logo src={process.env.PUBLIC_URL + '/img/logo.svg'} />
-            <SyncLoader color={'white'} css={override} loading={loading} size={30} margin={6} />
+            {/* <ClockLoader color={'white'} css={override} loading={loading} size={100} margin={6} /> */}
           </div>
         )
           :
@@ -53,7 +55,6 @@ function App() {
                   <Route path="/odeme/:id" exact component={Payment} />
                   <Route path="/banka-hesaplari" exact component={BankAccounts} />
                 </ScrollToTop>
-                <Route component={NotFound} />
               </Switch>
               <WhatsApp src={process.env.PUBLIC_URL + '/img/whatsapp.svg'} alt="WhatsApp logo" />
               <Footer />

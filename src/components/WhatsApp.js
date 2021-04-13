@@ -4,7 +4,7 @@ import './WhatsApp.scss';
 const WhatsApp = ({ src, alt }) => {
    return (
       <div className="whatsapp">
-         <a href='https://api.whatsapp.com/send?phone=905517462326' rel='noreferrer' target='_blank'><img src={src} alt={alt} /></a>
+         <a href='https://api.whatsapp.com/send?phone=905517462326' target='_blank' rel="noreferrer"><img src={src} alt={alt} /></a>
       </div >
    )
 }

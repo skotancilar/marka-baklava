@@ -18,7 +18,6 @@ const Navbar = () => {
       setMobileMenuOpen(!mobileMenuOpen);
    }
 
-
    return (
       <React.Fragment>
          <div className="navbar">

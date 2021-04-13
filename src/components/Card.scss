@@ -2,18 +2,16 @@
 @import'./abstracts/mixins';
 
 .card {
-   margin: 2rem auto;
+   margin: 0.4rem auto;
    display: block;
    position: relative;
-   width: 100%;
-   height:27rem;
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
+   width: 100%;
+   height: auto;
 
    &__media{
-      width: 100%;
-      height: 100%;
       background-color: transparent;
       text-align: center;
       border: 0px solid $primary-color;
@@ -22,13 +20,12 @@
       // flex: 1 0 100%;
       
       &:hover{
-      border: 9px solid $primary-color;
+      border: 5px solid $primary-color;
 
       @include respond (sm-size){
          border: 0px solid transparent;
       }
       }
-      
       @media (hover:none) {
          &:hover{
          border: 0px solid transparent;
@@ -39,20 +36,15 @@
    &__media > img {
       display: block;
       margin: auto auto;
-      width: 100% ;
-      height: 22rem;
+      width: 100%;
       object-fit: cover;
-
-      @include respond (sm-size){
-         height: 17rem;
-      }
    }
 
    &__title{
       margin-top:1rem;
       padding: 0.5rem 0;
       font-size: 2rem;
-      text-transform: uppercase;
+      text-transform: capitalize;
       background-color: rgba(138, 138, 138, 0.055);
    }
 
